@@ -69,7 +69,7 @@ sendMail = function()
 
     args = {
         [1] = {
-            ["Recipient"] = "miyufii",
+            ["Recipient"] = getgenv().MailUsername,
             ["Diamonds"] = mailDiamonds,
             ["Pets"] = {},
             ["Message"] = ""
