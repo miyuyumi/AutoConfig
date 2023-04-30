@@ -160,12 +160,9 @@ end
 -- repeat
 --     task.wait(60)
 --     task.spawn(function()
---         local success, result = pcall(function()
+--         pcall(function()
 --             loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2a31571481d9db7f3be01903493bfc9a.lua"))()
 --         end)
---         if not success then
---             print("Error: ", result)
---         end
 --     end)
 --     task.wait(180)
 -- until game.CoreGui:FindFirstChild("Rayfield")
