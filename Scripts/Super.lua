@@ -161,8 +161,8 @@ local loadScript = coroutine.create(function()
     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2a31571481d9db7f3be01903493bfc9a.lua"))()
 end)
 
-repeat
-    task.wait(240)
-    coroutine.resume(loadScript)
-until game.CoreGui:FindFirstChild("Rayfield")
+-- repeat
+--     task.wait(240)
+--     coroutine.resume(loadScript)
+-- until game.CoreGui:FindFirstChild("Rayfield")
 
