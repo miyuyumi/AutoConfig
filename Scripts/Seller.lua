@@ -77,6 +77,10 @@ local function sellingFunction()
             end
         end
     end
+
+    table.sort(toList, function(a, b)
+        return a[2] > b[2]
+    end)
     
     if not getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Trading Booths"]).GetBooth() then
         for _, v in next, workspace:WaitForChild("__MAP"):WaitForChild("Interactive"):WaitForChild("Booths"):GetChildren() do
