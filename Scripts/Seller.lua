@@ -144,7 +144,7 @@ Player.PlayerGui:FindFirstChild("Chat"):FindFirstChild("Frame"):FindFirstChild("
         if string.find(Child:FindFirstChild("TextLabel").Text, Player.DisplayName) then
             sellString = tostring(Child:FindFirstChild("TextLabel").Text)
             local buyer = sellString:match("(%S+)%spurchased")
-            local pet = sellString:match("a%s([%p%w%s]+)%sfrom")
+            local pet = sellString:match("%sa%s([%p%w%s]+)%sfrom")
             local seller = sellString:match("from%s([^%s]+)%sfor")
             local price = sellString:match("for%s([^%s]+)%sDiamonds")
             local currentDiamonds = string.format('%.2f',FrameworkLibrary.Save.Get().Diamonds/1000000000)
