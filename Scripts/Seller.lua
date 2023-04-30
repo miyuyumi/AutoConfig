@@ -106,7 +106,10 @@ end
 
 task.spawn(function()
     while true do
-        sellingFunction()
+        local success, result = pcall(sellingFunction())
+        if not success then 
+            print("Error: ", result)
+        end
         task.wait(60)
     end
 end)
