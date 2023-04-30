@@ -99,7 +99,7 @@ setRAM = coroutine.wrap(function()
             "%,", "")
         mailDiamonds = allDiamonds - 15000100000
         if config == 'AM' then
-            if #num > 19 then
+            if #num > 34 then
                 config = 'PM'
                 myAccount:SetAlias('P - Pet Count: ' .. #num)
                 checkServerAsync()
