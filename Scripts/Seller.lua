@@ -105,6 +105,7 @@ local function sellingFunction()
 end
 
 task.spawn(function()
+    print("Selling Enabled")
     while true do
         sellingFunction()
         task.wait(60)
