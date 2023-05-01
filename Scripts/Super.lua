@@ -157,13 +157,13 @@ else
     writefile("MilkUp/PetSimulatorX/" .. game:GetService 'Players'.LocalPlayer.Name .. ".json", contents)
 end
 
--- repeat
---     task.wait(60)
---     task.spawn(function()
---         pcall(function()
---             loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2a31571481d9db7f3be01903493bfc9a.lua"))()
---         end)
---     end)
---     task.wait(180)
--- until game.CoreGui:FindFirstChild("Rayfield")
+repeat
+    task.wait(60)
+    task.spawn(function()
+        pcall(function()
+            loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2a31571481d9db7f3be01903493bfc9a.lua"))()
+        end)
+    end)
+    task.wait(180)
+until game.CoreGui:FindFirstChild("Rayfield")
 
