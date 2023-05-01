@@ -13,7 +13,9 @@ while not lib.Loaded do
 	task.wait()
 end
 
-task.wait(10)
+print("Loading")
+task.wait(20)
+print("Loaded")
 
 local API = loadstring(game:HttpGet("https://raw.githubusercontent.com/7BioHazard/Utils/main/API.lua"))()
 
@@ -84,27 +86,24 @@ local function sellingFunction()
     
     if not getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Trading Booths"]).GetBooth() then
         for _, v in next, workspace:WaitForChild("__MAP"):WaitForChild("Interactive"):WaitForChild("Booths"):GetChildren() do
-            if v.Info.SurfaceGui.Frame.Top.Text == "Unclaimed Stand" then
-                repeat
+            pcall(function()
+                print(v.Info.SurfaceGui.Frame.Top.Text)
+                if v.Info.SurfaceGui.Frame.Top.Text == "Unclaimed Stand" then
                     Root:PivotTo(v.Booth.CFrame)
                     task.wait(0.5)
                     API:VirtualPressButton("E")
-                until not v or getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Trading Booths"]).GetBooth()
-            end
-            task.wait(0.5)
-            for _, v2 in next, toList do
-                Network.Invoke("Add Trading Booth Pet", {v2})
-                task.wait(0.5)
-            end
+                    task.wait(1)
+                end
+            end)
             if getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Trading Booths"]).GetBooth() then
                 break
             end
         end
-    else
-        for _, v in next, toList do
-            Network.Invoke("Add Trading Booth Pet", {v})
-            task.wait(0.5)
-        end
+    end
+    
+    for _, v in next, toList do
+        Network.Invoke("Add Trading Booth Pet", {v})
+        task.wait(0.5)
     end
 end
 
