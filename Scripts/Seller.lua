@@ -7,15 +7,18 @@ if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
 
+local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/preztel/AzureLibrary/master/uilib.lua", true))()
+
 local lib = require(game.ReplicatedStorage:WaitForChild("Framework"):WaitForChild("Library"))
 
 while not lib.Loaded do
 	task.wait()
 end
 
-print("Loading")
 task.wait(20)
-print("Loaded")
+local SellingTab = UILibrary:CreateTab("Seller", "Selling script has loaded", true) 
+
+
 
 local API = loadstring(game:HttpGet("https://raw.githubusercontent.com/7BioHazard/Utils/main/API.lua"))()
 
