@@ -16,9 +16,7 @@ while not lib.Loaded do
 end
 
 task.wait(20)
-local SellingTab = UILibrary:CreateTab("Seller", "Selling script has loaded", true) 
-
-
+local SellingTab = UILibrary:CreateTab("Seller", "Selling script has loaded", true)
 
 local API = loadstring(game:HttpGet("https://raw.githubusercontent.com/7BioHazard/Utils/main/API.lua"))()
 
