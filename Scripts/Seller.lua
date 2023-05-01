@@ -84,26 +84,26 @@ local function sellingFunction()
         return a[2] > b[2]
     end)
     
-    if not getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Trading Booths"]).GetBooth() then
-        for _, v in next, workspace:WaitForChild("__MAP"):WaitForChild("Interactive"):WaitForChild("Booths"):GetChildren() do
-            pcall(function()
-                print(v.Info.SurfaceGui.Frame.Top.Text)
-                if v.Info.SurfaceGui.Frame.Top.Text == "Unclaimed Stand" then
-                    Root:PivotTo(v.Booth.CFrame)
-                    task.wait(0.5)
-                    API:VirtualPressButton("E")
-                    task.wait(1)
-                end
-            end)
-            if getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Trading Booths"]).GetBooth() then
-                break
-            end
-        end
-    end
-    
     for _, v in next, toList do
         Network.Invoke("Add Trading Booth Pet", {v})
         task.wait(0.5)
+    end
+end
+
+if not getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Trading Booths"]).GetBooth() then
+    for _, v in next, workspace:WaitForChild("__MAP"):WaitForChild("Interactive"):WaitForChild("Booths"):GetChildren() do
+        pcall(function()
+            print(v.Info.SurfaceGui.Frame.Top.Text)
+            if v.Info.SurfaceGui.Frame.Top.Text == "Unclaimed Stand" then
+                Root:PivotTo(v.Booth.CFrame)
+                task.wait(0.5)
+                API:VirtualPressButton("E")
+                task.wait(1)
+            end
+        end)
+        if getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Trading Booths"]).GetBooth() then
+            break
+        end
     end
 end
 
