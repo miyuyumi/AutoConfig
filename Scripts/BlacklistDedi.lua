@@ -8,6 +8,8 @@ local new = "playerServers.json"
 local job = game.JobId
 local count = #game.Players:GetPlayers()
 local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local groupId = 5060810
 
 function getServer()
     local pastServers = httpService:JSONDecode(readfile(file) or "[]")
@@ -50,8 +52,17 @@ else
     checkServerAsync()
 end
 
+for _, v in pairs(Players:GetPlayers()) do
+    if v:IsInGroup(groupId) then
+        player:Kick(string.format("Staff [%s] is in the game.", v.Name))
+    end
+end
+
 Players.PlayerAdded:Connect(function(Player)
     count = count + 1
+    if Player:IsInGroup(groupId) then
+        player:Kick(string.format("Staff [%s] has joined the game.", Player.Name))
+    end
 end)
 
 Players.PlayerRemoving:Connect(function(Player)
