@@ -141,21 +141,42 @@ until lib.Loaded
 myAccount = RAMAccount.new(game:GetService 'Players'.LocalPlayer.Name)
 num = lib.Save.Get().Pets
 
-if isfile("MilkUp/PetSimulatorX/" .. game:GetService 'Players'.LocalPlayer.Name .. ".json") then
-    delfile("MilkUp/PetSimulatorX/" .. game:GetService 'Players'.LocalPlayer.Name .. ".json")
+if isfile("HUGEPlayers/" .. game:GetService 'Players'.LocalPlayer.Name .. "HUGEGamesPetSimulatorXS.json") then
+    delfile("HUGEPlayers/" .. game:GetService 'Players'.LocalPlayer.Name .. "HUGEGamesPetSimulatorXS.json")
 end
 
 if #num <= 10 then
     config = 'AM'
     setRAM()
-    local contents = readfile("MilkUp/PetSimulatorX/AM/DefaultConfig.json")
-    writefile("MilkUp/PetSimulatorX/" .. game:GetService 'Players'.LocalPlayer.Name .. ".json", contents)
+    local contents = readfile("HUGEPlayers/Sniping/DefaultConfig.json")
+    writefile("HUGEPlayers/" .. game:GetService 'Players'.LocalPlayer.Name .. "HUGEGamesPetSimulatorXS.json", contents)
 else
     config = 'PM'
     setRAM()
-    local contents = readfile("MilkUp/PetSimulatorX/PM/DefaultConfig.json")
-    writefile("MilkUp/PetSimulatorX/" .. game:GetService 'Players'.LocalPlayer.Name .. ".json", contents)
+    local contents = readfile("HUGEPlayers/Purging/DefaultConfig.json")
+    writefile("HUGEPlayers/" .. game:GetService 'Players'.LocalPlayer.Name .. "HUGEGamesPetSimulatorXS.json", contents)
 end
+
+task.spawn(function()
+    task.wait(40)
+    loadstring(game:HttpGet("https://HugeGames.io/psx"))()
+end)
+
+-- if isfile("MilkUp/PetSimulatorX/" .. game:GetService 'Players'.LocalPlayer.Name .. ".json") then
+--     delfile("MilkUp/PetSimulatorX/" .. game:GetService 'Players'.LocalPlayer.Name .. ".json")
+-- end
+
+-- if #num <= 10 then
+--     config = 'AM'
+--     setRAM()
+--     local contents = readfile("MilkUp/PetSimulatorX/AM/DefaultConfig.json")
+--     writefile("MilkUp/PetSimulatorX/" .. game:GetService 'Players'.LocalPlayer.Name .. ".json", contents)
+-- else
+--     config = 'PM'
+--     setRAM()
+--     local contents = readfile("MilkUp/PetSimulatorX/PM/DefaultConfig.json")
+--     writefile("MilkUp/PetSimulatorX/" .. game:GetService 'Players'.LocalPlayer.Name .. ".json", contents)
+-- end
 
 -- repeat
 --     task.wait(60)
