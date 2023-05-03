@@ -148,12 +148,12 @@ end
 if #num <= 10 then
     config = 'AM'
     setRAM()
-    local contents = readfile("HUGEPlayers/Sniping/DefaultConfig.json")
+    local contents = readfile("HUGEPlayers/Sniping/Huge.json")
     writefile("HUGEPlayers/" .. game:GetService 'Players'.LocalPlayer.Name .. "HUGEGamesPetSimulatorXS.json", contents)
 else
     config = 'PM'
     setRAM()
-    local contents = readfile("HUGEPlayers/Purging/DefaultConfig.json")
+    local contents = readfile("HUGEPlayers/Purging/Huge.json")
     writefile("HUGEPlayers/" .. game:GetService 'Players'.LocalPlayer.Name .. "HUGEGamesPetSimulatorXS.json", contents)
 end
 
