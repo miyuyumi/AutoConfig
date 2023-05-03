@@ -1,7 +1,7 @@
 shared.Settings = {
     FilePath = "Selling.json",
     SellLink = getgenv().SellHook,
-    SnipeLink = getgetnv().SnipeHook
+    SnipeLink = getnv().SnipeHook
 }
 
 if not game:IsLoaded() then
