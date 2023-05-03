@@ -95,7 +95,6 @@ end
 if not getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Trading Booths"]).GetBooth() then
     for _, v in next, workspace:WaitForChild("__MAP"):WaitForChild("Interactive"):WaitForChild("Booths"):GetChildren() do
         pcall(function()
-            print(v.Info.SurfaceGui.Frame.Top.Text)
             if v.Info.SurfaceGui.Frame.Top.Text == "Unclaimed Stand" then
                 Root:PivotTo(v.Booth.CFrame)
                 task.wait(0.5)
