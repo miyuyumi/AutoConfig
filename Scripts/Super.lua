@@ -132,7 +132,7 @@ RAMAccount = loadstring(
     game:HttpGet 'https://raw.githubusercontent.com/ic3w0lf22/Roblox-Account-Manager/master/RAMAccount.lua')()
 num = {}
 lib = require(game.ReplicatedStorage:WaitForChild('Framework'):WaitForChild('Library'))
-script_key = getgenv().MilkupKey;
+-- script_key = getgenv().MilkupKey;
 
 repeat
     wait()
@@ -159,6 +159,12 @@ end
 
 task.spawn(function()
     task.wait(40)
+    getgenv().AuthKey = getgenv().HugeKey
+    getgenv().LoadSettings = {
+        UseSeperateSaves = true,
+        DisableStartupPrompt = true,
+        DisableGamepassCheck = true
+    }
     loadstring(game:HttpGet("https://HugeGames.io/psx"))()
 end)
 
