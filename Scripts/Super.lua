@@ -158,7 +158,7 @@ else
 end
 
 task.spawn(function()
-    task.wait(60)
+    task.wait(30)
     getgenv().AuthKey = getgenv().HugeKey
     getgenv().LoadSettings = {
         UseSeperateSaves = true,
