@@ -1,0 +1,747 @@
+1 - Cat
+10 - Dragon
+100 - Coin Dragon
+1000 - Capybara Giftbox
+1001 - Season 1 Basic Gift
+1002 - Season 1 Rare Gift
+1003 - Season 1 Epic Gift
+1004 - Season 1 Legendary Gift
+1005 - Season 1 Mythical Gift
+1006 - Exclusive Egg 1
+1007 - Exclusive Egg 2
+1008 - Anniversary Gift
+1009 - Halloween 2022 Gift
+101 - Coinortuus
+1010 - Exclusive Egg 3
+1011 - Exclusive Egg 4
+1012 - Hype Gift 1
+1013 - Exclusive Egg 5
+1014 - Christmas 2022 Stocking
+1015 - Exclusive Egg 6
+1016 - Exclusive Egg 7
+1017 - New Years 2023 Gift
+1018 - Exclusive Egg 8
+1029 - Event Egg 1
+102 - White Tiger
+1020 - Hype Gift 2
+1022 - Exclusive Egg 10
+103 - Crocodile
+104 - Panda
+105 - Red Panda
+106 - Signature BIG Maskot
+107 - Green Cobra
+108 - Purple Cobra
+109 - King Cobra
+11 - Ugly Duckling
+110 - Enchanted Cat
+111 - Enchanted Elephant
+112 - Cotton Candy Lamb
+113 - Rainbow Fish
+114 - Hell Spider
+115 - Rainbow Slime
+116 - Three Headed Dragon
+117 - Dominus Astra
+118 - Bull
+119 - Samurai Bull
+12 - Ducky
+120 - Shadow Griffin
+121 - Hell Rock
+122 - Hellhound
+123 - Dove
+124 - Peacock
+125 - Heavenly Peacock
+126 - Domortuus
+127 - Kraken
+128 - Blue Sea Dragon
+129 - Hound of Hades
+13 - Turtle
+130 - Chest Mimic
+131 - Galaxy Dragon
+132 - Sock Monkey
+133 - Blobfish
+134 - Fairy
+135 - Axolotl
+136 - Sphinx
+137 - Cupcake
+138 - Hippomelon
+139 - Pog Cat
+14 - Flamingo
+140 - Storm Wolf
+141 - Phantom Wolf
+142 - Mushroom King
+143 - Ghost
+144 - Guest Noob
+145 - Hell Chick
+146 - Wyvern of Hades
+147 - Domortuus Astra
+148 - Noobortuus
+149 - Hell Chest Mimic
+15 - Shark
+150 - Empyrean Dragon
+151 - Empyrean Fox
+152 - Empyrean Stallion
+153 - Empyrean Snake
+154 - Angelus
+155 - Pterodactyl
+156 - Empyrean Agony
+157 - Huge Cat
+158 - Alien
+159 - Robot
+16 - Hydra
+161 - Cyborg Cat
+162 - Cyborg Bunny
+163 - Cyborg Dragon
+164 - Cyborg Panda
+165 - Cyborg Ducky
+166 - Cyborg Mortuus
+167 - Cyborg Dominus
+168 - Nyan Cat
+169 - Grumpy Cat
+17 - Monkey
+170 - Knife Cat
+171 - Lava Scorpion
+172 - Cyber Fox
+173 - Cyber Bunny
+174 - Cyber Raccoon
+175 - Happy Computer
+176 - Pog Dog
+177 - Pog Dragon
+178 - Pog Immortuus
+179 - Techno Cat
+18 - Tiger
+180 - Metal Skull
+181 - M-2 PROTOTYPE
+182 - M-6 PROTOTYPE
+183 - Blue BIG Maskot
+184 - A-36
+185 - Nebula Dragon
+186 - Toy Mouse
+187 - Cat Magician
+188 - Ducky Magician
+189 - Steampunk Crocodile
+19 - Parrot
+190 - Sophisticated Fox
+191 - Steampunk Octopus
+192 - Steampunk Fish
+193 - Mining Mole
+194 - Mechanical Spider
+195 - Steampunk Wolf
+196 - Blimp Dragon
+197 - Steampunk Bat
+198 - Sad Cat
+199 - Galaxy Pegasus
+2 - Dog
+20 - Dino
+200 - Reversed Dog
+2000 - Huge Sleipnir
+2001 - Huge Floppa
+2002 - Huge Chest Mimic
+2003 - Huge Samurai Bull
+2004 - Huge Hell Rock
+2005 - Huge Enchanted Deer
+2006 - Huge Cyborg Capybara
+2007 - Huge Party Cat
+2008 - Huge Skeleton
+2009 - Huge Cheerful Yeti
+201 - Reversed Cat
+2010 - Huge Sapphire Phoenix
+2011 - Huge Techno Cat
+2012 - Huge Corgi
+2013 - Huge Ducky
+2014 - Huge Monkey
+2015 - Huge Axolotl
+2016 - Huge Hippomelon
+2017 - Huge Scary Cat
+2018 - Huge Scary Corgi
+2019 - Huge Prickly Panda
+202 - Stacked Cat
+2020 - Huge Inferno Cat
+2021 - Huge Grim Reaper
+2022 - Huge Balloon Cat
+2023 - Huge Blue Balloon Cat
+2024 - Huge Neon Twilight Wolf
+2025 - Huge Neon Twilight Dragon
+2026 - Huge Green Balloon Cat
+2027 - Huge Scarecrow Cat
+2028 - Huge Orange Balloon Cat
+2112 - Huge RGB Balloon Cat
+203 - Stacked Dog
+2030 - Huge Lucki
+2031 - Huge Pink Lucky Block
+2032 - Huge Party Dog
+2033 - Huge Anime Unicorn
+2034 - Huge Anime Agony
+2035 - Huge Elf Cat
+2036 - Huge Elf Dog
+2037 - Huge Crowned Cat
+2038 - Huge Crowned Corgi
+2039 - Huge Crowned Pegasus
+204 - Stacked Dominus
+2040 - Huge Santa Dragon
+2041 - Huge Santa Monkey
+2042 - Huge Reindeer Dog
+2043 - Huge Reindeer Axolotl
+2044 - Huge Snowman
+2045 - Huge Jolly Penguin
+2046 - Huge Grinch Cat
+2047 - Huge Mrs. Claws
+2048 - Huge Present Chest Mimic
+2113 - Huge Chroma Balloon Dragon
+205 - Blurred Bear
+2050 - Huge Balloon Axolotl
+2051 - Huge Party Crown Ducky
+2052 - Huge Dominus Lucki
+2053 - Huge Rainbow Lucky Block
+2054 - Huge Coin
+2055 - Huge Otter
+2056 - Huge Samurai Dragon
+2057 - Huge Unicorn
+2058 - Huge Doodle Cat
+2059 - Huge Squirrel
+206 - Blurred Axolotl
+2060 - Huge Neon Cat
+2061 - Huge Neon Griffin
+2062 - Huge Doodle Fairy
+2063 - Huge Pterodactyl
+2064 - Huge Orca
+2065 - Huge Chameleon
+2066 - Huge King Cobra
+2067 - Huge Angelus
+2068 - Huge Peacock
+2069 - Huge Party Axolotl
+207 - Blurred Dominus
+2070 - Huge Lovemelon
+2071 - Huge Cupid Corgi
+2072 - Huge Knife Cat
+2073 - Huge Pop Cat
+2085 - Huge Clover Dragon
+208 - Blurred Agony
+209 - Dominus Alienus
+21 - Immortuus
+210 - Dominus Darkwing
+211 - Bladee
+212 - Ghost Cat
+213 - Pumpkin Cat
+214 - Werewolf
+215 - Vampire Bat
+216 - Ghoul Horse
+217 - The Grim Reaper
+218 - Witch Cat
+219 - Zombie Bull
+22 - Mortuus
+220 - Zombie Corgi
+221 - Zombie Squirrel
+222 - Stacked Doge Noob
+223 - Masked Blob Fish
+224 - Blobenstein
+225 - Huge Pumpkin Cat
+226 - Bleebo The Alien
+227 - Meebo The Alien
+228 - Nine Eyed Lion
+229 - Meebo in a Spaceship
+23 - Phoenix
+230 - Gleebo The Alien
+231 - Astronaut Cat
+232 - Alien Axolotl
+233 - Star Surfer
+234 - Jelly Alien
+235 - Alien Arachnid
+236 - Red Fluffy
+237 - Blue Fluffy
+238 - Alien Parasite
+239 - Huge Pegasus
+24 - Seal
+240 - Galaxy Fox
+241 - Storm Dragon
+242 - Wicked Angelus
+243 - Sock Corgi
+244 - Sock Cat
+245 - Cowboy Cat
+246 - Sapphire Phoenix
+247 - Party Cat
+248 - Festive Cat
+249 - Festive Dog
+25 - Polar Bear
+250 - Festive Dragon
+251 - Festive Agony
+252 - Candycane
+253 - Gingerbread Cat
+254 - Gingerbread Corgi
+255 - Gingerbread Dragon
+256 - Reindeer
+257 - Rudolf
+258 - Cookie Mouse
+259 - Fawn
+26 - Penguin
+260 - Festive Cardinal
+261 - Festive Elf
+262 - North Pole Wolf
+263 - Santa Paws
+264 - Silver Stag
+265 - Silver Dragon
+266 - Huge Festive Cat
+267 - Koala
+268 - Orca
+269 - Gargoyle Dragon
+27 - Arctic Fox
+270 - Punkey
+271 - Otter
+272 - Wicked Empyrean Dragon
+273 - Fairy Queen
+274 - Huge Santa Paws
+275 - Chameleon
+276 - Sleipnir
+277 - Forest Wyvern
+278 - Fairy Moth
+279 - Keyboard Cat
+28 - Mystical Fox
+280 - Glitched Cat
+281 - Glitched Dog
+282 - Glitched Dragon
+283 - Glitched Dominus
+284 - Glitched Unicorn
+285 - Glitched Phoenix
+286 - Glitched Immortuus
+287 - Hacked Cat
+288 - 404 Demon
+289 - Haxolotl
+29 - Snowman
+290 - Haxigator
+291 - Huge Forest Wyvern
+292 - Huge Hacked Cat
+293 - Hacked Raccoon
+294- Hubert
+295 - Midnight Axolotl
+296 - Camo Axolotl
+297 - Lumi Axolotl
+298 - Nature Axolotl
+299 - Fancy Axolotl
+3 - Bunny
+30 - Desert Cat
+300 - Storm Axolotl
+3000 - Titanic Cat
+3001 - Titanic Jolly Cat
+3002 - Titanic Balloon Monkey
+3003 - Titanic Hippomelon
+3004 - Titanic Neon Agony
+3005 - Titanic Red Balloon Cat
+3006 - Titanic Blue Balloon Cat
+3007 - Titanic Hubert
+301 - Empyrean Axolotl
+302 - Hellish Axolotl
+303 - Chill Axolotl
+304 - Hydra Axolotl
+305 - Axolotuus
+306 - Galaxy Axolotl
+307 - Huge Gargoyle Dragon
+308 - Huge Dog
+309 - Huge Dragon
+31 - Camel
+310 - Pony
+311 - Lucky Cat
+312 - Rave Crab
+313 - Ice Cream Cone
+314 - Wicked Agony
+315 - Storm Agony
+316 - Huge Cupcake
+317 - Huge Lucky Cat
+318 - Pixel Cat
+319 - Pixel Corgi
+32 - Bobcat
+320 - Pixel Dragon
+321 - Pixel Chick
+322 - Pixel Dino
+323 - Pixel Slime
+324 - Pixel Tiger
+325 - Pixel Shark
+326 - Pixel Goblin
+327 - Pixel Demon
+328 - Pixel Wolf
+329 - Huge Pony
+33 - Lion
+330 - Huge Storm Agony
+331 - Huge Pixel Cat
+332 - Rainbow Unicorn
+333 - Super Corgi
+334 - Starfall Dragon
+335 - Easter Cat
+336 - Chocolate Bunny
+337 - Pink Marshmellow Chick
+338 - Green Marshmellow Chick
+339 - Blue Marshmellow Chick
+34 - Slime
+340 - The Easter Bunny
+341 - Pastel Sock Bunny
+342 - Pastel Sock Corgi
+343 - Pastel Sock Bear
+344 - Pastel Sock Dragon
+345 - Easter Lamb
+346 - Easter Fox
+347 - Easter Agony
+348 - Chocolate Dog
+349 - Chocolate Frog
+35 - Black Widow
+350 - Chocolate Hippo
+351 - Huge Super Corgi
+352 - Huge Rainbow Unicorn
+353 - Huge Easter Cat
+354 - Capybara
+355 - Floppa
+356 - Ninja
+357 - Ninja Turtle
+358 - Tiedye Cat
+359 - Tiedye Dragon
+36 - Elephant
+360 - Tiedye Corgi
+361 - Tiedye Bear
+362 - Huge Capybara
+363 - Mosaic Griffin
+364 - Mosaic Corgi
+365 - Mosaic Dove
+366 - Crystal Dog
+367 - Crystal Deer
+368 - Nightfall Wolf
+369 - Nightfall Pegasus
+37 - Lava Slime
+370 - Huge Tiedye Cat
+371 - Huge Tiedye Corgi
+372 - Huge Mosaic Corgi
+373 - Huge Mosaic Griffin
+374 - Huge Crystal Dog
+375 - Huge Nightfall Wolf
+376 - Huge Nightfall Pegasus
+377 - Nightfall Ram
+378 - Nightfall Tiger
+379 - Super Capybara
+38 - Broken
+380 - Super Cat
+381 - Super Axolotl
+382 - Cyborg Capybara
+383 - Crowned Cat
+384 - Crowned Corgi
+385 - Crowned Pegasus
+386 - Inferno Cat
+387 - Subzero Cat
+388 - Lightning Bat
+389 - Prickly Panda
+39 - Griffin
+390 - Water Wolf
+391 - Lucki
+392 - Scary Cat
+393 - Scary Corgi
+394 - Balloon Cat
+395 - Propeller Cat
+396 - Clown Cat
+397 - Fluffy Cat
+398 - Garden Cat
+399 - Hydra Cat
+4 - BIG Maskot
+40 - Cyborg Dog
+400 - Error Cat
+401 - Demolition Cat
+402 - Hoverboard Cat
+403 - Helicopter Cat
+404 - Rich Cat
+405 - Safety Cat
+406 - Neon Twilight Cat
+407 - Neon Twilight Wolf
+408 - Neon Twilight Tiger
+409 - Neon Twilight Dragon
+41 - Fire Horse
+410 - Turkey
+411 - Hedgehog
+412 - Scarecrow Cat
+413 - Yellow Lucky Block
+414 - Blue Lucky Block
+415 - Party Dog
+416 - Party Pig
+417 - Party Dragon
+418 - Anime Monkey
+419 - Anime Agony
+42 - Flamortuus
+420 - Anime Unicorn
+421 - Anime Corgi
+422 - Elf Cat
+423 - Elf Dog
+424 - Reindeer Axolotl
+425 - Reindeer Dog
+426 - Santa Monkey
+427 - Santa Dragon
+428 - Jolly Owl
+429 - Jolly Husky
+43 - Blue Fish
+430 - Jolly Penguin
+431 - Jolly Moose
+432 - Jolly Narwhal
+433 - Reindeer Cat
+434 - Reindeer Corgi
+435 - Reindeer Agony
+436 - Mrs. Claws
+437 - Frost Bear
+438 - Frost Axolotl
+439 - Nutcracker Cat
+44 - Goldfish
+440 - Present Cat
+441 - Present Dog
+442 - Present Dragon
+443 - North Pole Bunny
+444 - Sleigh Cat
+445 - Candycane Unicorn
+446 - Snowflake Pegasus
+447 - Present Chest Mimic
+448 - Grinch Cat
+449 - Balloon Dragon
+45 - Deer
+450 - Balloon Corgi
+451 - Balloon Axolotl
+452 - Party Crown Elephant
+453 - Party Crown Corgi
+454 - Party Crown Ducky
+455 - Lucki Dominus
+456 - Doodle Cat
+457 - Doodle Corgi
+458 - Doodle Ducky
+459 - Doodle Bunny
+46 - Squirrel
+460 - Doodle Bee
+461 - Doodle Snow Leopard
+462 - Doodle Snow Ram
+463 - Doodle Walrus
+464 - Doodle Snow Owl
+465 - Doodle Penguin
+466 - Doodle Narwhal
+467 - Doodle Cow
+468 - Doodle Piggy
+469 - Doodle Lamb
+47 - Puffin
+470 - Doodle Chicken
+471 - Doodle Ugly Duckling
+472 - Doodle Mouse
+473 - Doodle Fish
+474 - Doodle Flamingo
+475 - Doodle Turtle
+476 - Doodle Shark
+477 - Doodle Axolotl
+478 - Doodle Monkey
+479 - Doodle Parrot
+48 - Walrus
+480 - Neon Cat
+481 - Neon Dog
+482 - Neon Griffin
+483 - Doodle Dolphin
+484 - Doodle Fox
+485 - Doodle Raccoon
+486 - Doodle Black Bear
+487 - Doodle Squirrel
+488 - Doodle Green Cobra
+489 - Doodle Sloth
+49 - Angry Yeti
+490 - Doodle Tiger
+491 - Doodle Elephant
+492 - Doodle Crocodile
+493 - Doodle Lion
+494 - Doodle Rhino
+495 - Doodle Lemur
+496 - Doodle Fairy
+497 - Doodle Griffin
+498 - Doodle Pegasus
+499 - Doodle Dragon
+5 - Bear
+50 - Cheerful Yeti
+500 - Doodle Unicorn
+501 - Doodle Agony
+502 - Doodle Hydra
+503 - Party Axolotl
+504 - Party Tiger
+505 - Party Panda
+506 - Lovemelon
+507 - Valentines Bear
+508 - Valentines Cat
+509 - Cupid Corgi
+51 - Snow Ram
+510 - Love Lion
+511 - Pop Cat
+512 - Clout Cat
+513 - Safari Cat
+52 - Snow Leopard
+53 - Gecko
+54 - Orange Gecko
+55 - Happy Rock
+56 - Noob
+57 - Dominus
+58 - Dominus Blue
+59 - Dominus Red
+6 - Cow
+60 - Bat
+61 - Reaper
+62 - Skeleton
+63 - Willow Wisp
+64 - Agony
+65 - Panther
+66 - Green Fish
+67 - Snow Cat
+68 - Snow Dog
+69 - Fire Cat
+6969 - banana
+7 - Fox
+70 - Fire Dog
+71 - White Bunny
+72 - Black Bear
+73 - Frost Dragon
+74 - Icemortuus
+75 - Hell Fox
+76 - Hell Bat
+77 - Ice Slime
+78 - Snow Squirrel
+79 - Chick
+8 - Dalmatian
+80 - Chicken
+81 - Piggy
+82 - Corgi
+83 - Husky
+84 - Lamb
+85 - Armadillo
+86 - Sand Turtle
+87 - Pegasus
+88 - Unicorn
+89 - Samurai Dragon
+9 - Raccoon
+90 - Doge
+91 - Angel Cat
+92 - Angel Dog
+93 - Demon
+94 - Cyclops
+95 - Froggy
+96 - Goblin
+97 - Enchanted Deer
+98 - Electric Slime
+99 - Coin Cat
+514 - Love Lamb
+2074 - Huge Safari Cat
+2075 - Huge Love Lamb
+3008 - Titanic Lucki
+3009 - Titanic Capybara
+515 - Diamond Cat
+2076 - Huge Meebo in a Spaceship
+516 - Bluey Chihuahua 
+517 - Spiffy Cat 
+3010 - Titanic Dominus Astra
+518 - Comet Agony
+519 - Comet Cyclops
+520 - Empyrean Dominus
+2078 - Huge Diamond Cat
+2079 - Huge Comet Cyclops
+521 - Inferno Dominus
+522 - Storm Dominus
+1021 - Exclusive Egg 9
+2080 - Huge Comet Agony
+2081 - Huge Storm Dominus
+3011 - Titanic Blobfish
+523 - Leprechaun Cat
+524 - Irish Corgi
+525 - Clover Fairy
+526 - Clover Axolotl
+527 - Clover Unicorn
+528 - Clover Dragon
+2082 - Huge Inferno Dominus
+2083 - Huge Leprechaun Cat
+2084 - Huge Clover Unicorn
+529 - Kawaii Cat
+2088 - Huge Pastel Sock Dragon
+530 - Cupcake Unicorn
+531 - Strawberry Cow
+532 - Bread Shiba
+533 - Flower Panda
+534 - Sailor Narwhal
+535 - Mushroom Fox
+536 - Playful Seal
+537 - Dino Bear
+538 - Seedling Squirrel
+539 - Chef Monkey
+540 - Masked Owl
+541 - Butterfly Llama
+2086 - Huge Kawaii Cat
+542 - Purple Marshmellow Chick
+2087 - Huge Bread Shiba
+2089 - Huge Pink Marshmellow Chick
+2090 - Huge Gleebo The Alien
+543 - Hologram Cat
+544 - Hologram Tiger
+545 - Hologram Axolotl
+546 - Hologram Shark
+2093 - Huge Chef Cat
+2091 - Huge Hologram Shark
+2092 - Huge Hologram Axolotl
+3012 - Titanic Hologram Cat
+1026 - Quest Egg 1
+547 - Chef Cat
+548 - Kawaii Dragon
+549 - Ninja Axolotl
+2094 - Huge Kawaii Dragon
+2097 - Huge Rainbow Slime
+2095 - Huge Ninja Axolotl
+2096 - Huge Goblin
+2100 - Huge Painted Cat
+2098 - Huge Gecko
+550 - Monkey Bro
+551 - Error Dog
+552 - Error Axolotl
+553 - Error Dragon
+554 - Spring Bee
+555 - Easter Yeti
+556 - Easter Angelus
+3013 - Titanic Banana
+557 - Egg Chick
+558 - Basket Bunny
+559 - Easter Axolotl
+560 - Painted Cat
+1024 - Easter 2023 Gift
+561 - Easter Dominus
+562 - Marshmellow Agony
+563 - Spring Griffin
+2099 - Huge Error Cat
+2108 - Huge Kraken
+2102 - Huge Easter Dominus
+2103 - Huge Marshmellow Agony
+2104 - Huge Pink Balloon Cat
+2101 - Huge Easter Bunny
+564 - Redstone Cat
+565 - Emerald Monkey
+566 - Amethyst Dragon
+567 - Mystic Corgi
+2105 - Huge Easter Yeti
+2107 - Huge Amethyst Dragon
+3014 - Titanic Mystic Corgi
+1023 - Exclusive Egg 11
+2106 - Huge Redstone Cat
+1027 - Huge Machine Egg 2
+1028 - Exclusive Chroma Egg 1
+568 - M-10 PROTOTYPE
+2110 - Huge Evolved Hell Rock
+2109 - Huge M-10 PROTOTYPE
+569 - Safari Dog
+2115 - Huge Evolved Cupcake
+2029 - Huge White Balloon Cat
+570 - Pinata Cat
+571 - Pinata Dog
+572 - Chroma Balloon Dragon
+573 - Chroma Balloon Corgi
+574 - Chroma Balloon Axolotl
+2049 - Huge Balloon Dragon
+2114 - Huge Chroma Balloon Axolotl
+3015 - Titanic Chroma Balloon Monkey
+1025 - Exclusive Egg 12
+575 - Sombrero Cat
+576 - Sombrero Chihuahua
+2111 - Huge Safari Dog
+2117 - Huge Evolved Pixel Cat
+2116 - Huge Evolved Hacked Cat
+2118 - Huge Evolved Pterodactyl
+2119 - Huge Evolved Peacock
+2122 - Huge Cool Cat
+1019 - Huge Machine Egg 1
+2120 - Huge Evolved King Cobra
+577 - Cool Cat
+578 - Cool Corgi
+579 - Cool Dragon
+2121 - Huge Pinata Cat
