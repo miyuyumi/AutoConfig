@@ -55,7 +55,7 @@ setupvalue(Network.Fired, 1, function() return true end)
 if isfile("Selling.json") then
     delfile("Selling.json")
 end
-local contents = tostring(game:HttpGetAsync("json"))
+local contents = tostring(game:HttpGetAsync("https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Selling.json"))
 writefile("Selling.json", contents)
 
 local petList = HttpService:JSONDecode(readfile(shared.Settings.FilePath))
