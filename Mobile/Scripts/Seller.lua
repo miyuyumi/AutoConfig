@@ -1,7 +1,5 @@
 shared.Settings = {
     FilePath = "Selling.json",
-    SellLink = getgenv().SellHook,
-    SnipeLink = getgenv().SnipeHook
 }
 
 if not game:IsLoaded() then
@@ -37,8 +35,6 @@ local Character = Player.Character or Player.CharacterAdded:Wait()
 local Humanoid = Character:WaitForChild("Humanoid")
 local Root = Character:WaitForChild("HumanoidRootPart")
 
-local Identity = syn and syn.set_thread_identity or setthreadcontext or setidentity or function() end
-
 local PSX_Library_Instance = ReplicatedStorage:WaitForChild("Library")
 local PSX_Library = require(PSX_Library_Instance)
 
@@ -55,6 +51,12 @@ setupvalue(Network.Invoke, 1, function() return true end)
 setupvalue(Network.Invoked, 1, function() return true end)
 setupvalue(Network.Fire, 1, function() return true end)
 setupvalue(Network.Fired, 1, function() return true end)
+
+if isfile("Selling.json") then
+    delfile("Selling.json")
+end
+local contents = tostring(game:HttpGetAsync("json"))
+writefile("Selling.json", contents)
 
 local petList = HttpService:JSONDecode(readfile(shared.Settings.FilePath))
 local toList = {}
@@ -88,7 +90,7 @@ local function sellingFunction()
     
     for _, v in next, toList do
         Network.Invoke("Add Trading Booth Pet", {v})
-        task.wait(0.5)
+        task.wait(1)
     end
 end
 

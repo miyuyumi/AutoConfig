@@ -342,7 +342,7 @@
 312 - Rave Crab
 313 - Ice Cream Cone
 314 - Wicked Agony
-315 - Storm Agony
+2121 - Huge Pinata Cat
 316 - Huge Cupcake
 317 - Huge Lucky Cat
 318 - Pixel Cat
@@ -730,7 +730,7 @@
 2049 - Huge Balloon Dragon
 2114 - Huge Chroma Balloon Axolotl
 3015 - Titanic Chroma Balloon Monkey
-1025 - Exclusive Egg 12
+1037 - Exclusive Egg 14
 575 - Sombrero Cat
 576 - Sombrero Chihuahua
 2111 - Huge Safari Dog
@@ -738,10 +738,104 @@
 2116 - Huge Evolved Hacked Cat
 2118 - Huge Evolved Pterodactyl
 2119 - Huge Evolved Peacock
-2122 - Huge Cool Cat
+2124 - Huge Jelly Pig
 1019 - Huge Machine Egg 1
 2120 - Huge Evolved King Cobra
 577 - Cool Cat
 578 - Cool Corgi
 579 - Cool Dragon
-2121 - Huge Pinata Cat
+315 - Storm Agony
+580 - Jelly Cat
+581 - Jelly Corgi
+582 - Jelly Panda
+583 - Jelly Pig
+2125 - Huge Sombrero Chihuahua
+3016 - Titanic Jelly Cat
+584 - Sombrero Corgi
+585 - Sombrero Axolotl
+586 - Pinata Monkey
+2123 - Huge Jelly Corgi
+2122 - Huge Cool Cat
+1025 - Exclusive Egg 12
+2127 - Huge Party Penguin
+3017 - Titanic Tiedye Cat
+3018 - Titanic Tiedye Dragon
+587 - Stealth Dragon
+588 - Stealth Bobcat
+589 - Stealth Cat
+590 - Exquisite Cat
+591 - Exquisite Elephant
+592 - Exquisite Parrot
+593 - Party Shark
+594 - Party Penguin
+595 - Party Squirrel
+2126 - Huge BIG Maskot
+1031 - Hype Gift 3
+2128 - Huge Stealth Dragon
+2129 - Huge Exquisite Cat
+2130 - Huge Exquisite Parrot 
+596 - Kawaii Tiger
+597 - Lucki Cat
+598 - Lucki Monkey
+2131 - Huge Chroma Lucki
+2132 - Huge Chroma Lucky Block Mimic
+599 - Lucki Tiger
+391 - Lucki
+600 - Mosaic Cat
+602 - Mosaic Elephant
+603 - Mosaic Lamb
+604 - Firefighter Dalmatian
+605 - Umbrella Dog
+606 - Basketball Retriever
+607 - Skateboard Bulldog
+608 - Bubble Dog
+609 - Detective Terrier
+610 - Robber Pug
+611 - Punksky
+612 - Wizard Westie
+613 - Torpedo Shepherd
+614 - Atomic Corgi
+615 - Nerd Collie
+616 - Hot Dog
+2133 - Huge Tiedye Bunny
+2134 - Huge Tiedye Axolotl
+2135 - Huge Mosaic Lamb
+2136 - Huge Stealth Bobcat
+617 - Gamer Shiba
+618 - Tiedye Dog
+619 - Tiedye Bunny
+620 - Tiedye Axolotl
+621 - Tiedye Griffin
+622 - Bluebird
+2137 - Huge Bluebird
+2138 - Huge Pixel Corgi
+2139 - Huge Cyborg Cat
+2140 - Huge Pixel Wolf
+2141 - Huge Cyborg Dragon
+2142 - Huge Pixel Dragon
+2143 - Huge Ghost
+2144 - Huge Doodle Snow Owl
+2145 - Huge Mimic Tech Chest
+2148 - Huge Basketball Retriever
+3020 - Titanic Pink Balloon
+3021 - Titanic Sad Cat
+3022 - Titanic Axolotl
+2146 - Huge Empyrean Agony
+2147 - Huge Firefighter Dalmatian
+2149 - Huge Purple Balloon Cat
+2150 - Huge Black Balloon Cat
+2153 - Huge Nightmare Kraken
+623 - Hot Dooooog
+1032 - Season 2 Basic Gift
+1033 - Season 2 Rare Gift
+1034 - Season 2 Epic Gift
+1035 - Season 2 Legendary Gift
+1036 - Season 2 Mythical Gift
+624 - Nightmare Cat
+625 - Nightmare Spirit
+626 - Nightmare Bear
+627 - Nightmare Kraken
+3023 - Titanic Nightmare Cat
+2151 - Huge Beans Balloon Cat
+2152 - Huge Nightmare Spirit
+1030 - Exclusive Egg 13
