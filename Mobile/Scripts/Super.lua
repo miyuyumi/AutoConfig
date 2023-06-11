@@ -132,7 +132,6 @@ if condition == 1 then -- Exclusives
         local contents = tostring(game:HttpGetAsync(
             "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Purging.json"))
         writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt", contents)
-        setRAM()
     end
 else -- Huges
     config = 'PM'
