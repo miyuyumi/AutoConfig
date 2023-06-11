@@ -31,6 +31,8 @@ if game.PlaceId ~= 7722306047 then
     game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse, game.Players.LocalPlayer)
 end
 
+task.wait(20)
+
 task.spawn(function()
     repeat
         task.wait()
