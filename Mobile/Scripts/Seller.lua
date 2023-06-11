@@ -1,5 +1,6 @@
 shared.Settings = {
     FilePath = "Selling.json",
+    SellLink = getgenv().SellHook
 }
 
 if not game:IsLoaded() then
