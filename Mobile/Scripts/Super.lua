@@ -2,6 +2,8 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
+task.wait(40)
+
 Library = require(game.ReplicatedStorage.Framework.Library)
 
 InvokeHook = hookfunction(getupvalue(Library.Network.Invoke, 1), function(...)
