@@ -89,7 +89,7 @@ else
                         game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
                             game.Players.LocalPlayer)
                     end
-                    wait(5)
+                    task.wait(5)
                 until false
             end
         end)
