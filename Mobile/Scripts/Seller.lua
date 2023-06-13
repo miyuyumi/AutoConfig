@@ -114,7 +114,7 @@ end
 task.spawn(function()
     while true do
         sellingFunction()
-        task.wait(60)
+        task.wait(30)
     end
 end)
 
