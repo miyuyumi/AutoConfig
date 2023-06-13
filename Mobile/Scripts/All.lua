@@ -85,9 +85,10 @@ else
                 repeat
                     if promptOverlay.ErrorPrompt.MessageArea.ErrorFrame.ErrorMessage.Text ~= "Label" then
                         sendError()
-                        local getResponse = makeGetRequest(apiUrl)
-                        game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
-                            game.Players.LocalPlayer)
+                        -- local getResponse = makeGetRequest(apiUrl)
+                        -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
+                        --     game.Players.LocalPlayer)
+                        game:GetService("TeleportService"):Teleport(6284583030)
                     end
                     task.wait(5)
                 until false
@@ -103,14 +104,16 @@ else
             }
             local postResponse = makePostRequest(apiUrl, httpService:JSONEncode(postRequestBody))
             if postResponse:find("Hopping server.") then
-                local getResponse = makeGetRequest(apiUrl)
-                game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
-                    game.Players.LocalPlayer)
+                -- local getResponse = makeGetRequest(apiUrl)
+                -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
+                --     game.Players.LocalPlayer)
+                game:GetService("TeleportService"):Teleport(6284583030)
             end
         else
-            local getResponse = makeGetRequest(apiUrl)
-            game:GetService("TeleportService")
-                :TeleportToPlaceInstance(7722306047, getResponse, game.Players.LocalPlayer)
+            -- local getResponse = makeGetRequest(apiUrl)
+            -- game:GetService("TeleportService")
+            --     :TeleportToPlaceInstance(7722306047, getResponse, game.Players.LocalPlayer)
+            game:GetService("TeleportService"):Teleport(6284583030)
         end
 
         for _, v in pairs(Players:GetPlayers()) do
@@ -129,17 +132,19 @@ else
         Players.PlayerRemoving:Connect(function(Player)
             count = count - 1
             if count < 10 then
-                local getResponse = makeGetRequest(apiUrl)
-                game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
-                    game.Players.LocalPlayer)
+                -- local getResponse = makeGetRequest(apiUrl)
+                -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
+                --     game.Players.LocalPlayer)
+                game:GetService("TeleportService"):Teleport(6284583030)
             end
         end)
     end)
 
     task.spawn(function()
         task.wait(math.random(45, 90) * 20)
-        local getResponse = makeGetRequest(apiUrl)
-        game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse, game.Players.LocalPlayer)
+        -- local getResponse = makeGetRequest(apiUrl)
+        -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse, game.Players.LocalPlayer)
+        game:GetService("TeleportService"):Teleport(6284583030)
     end)
 
     task.spawn(function()
