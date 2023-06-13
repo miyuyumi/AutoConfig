@@ -104,7 +104,7 @@ if isfile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt") 
     delfile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt")
 end
 
-condition = math.random(1, 2)
+condition = math.random(1, 1)
 
 if condition == 1 then -- Exclusives
     if #num <= 10 then
