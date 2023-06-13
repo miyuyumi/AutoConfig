@@ -74,23 +74,23 @@ setRAM = coroutine.wrap(function()
         allDiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text,
             "%,", "")
         mailDiamonds = allDiamonds - 15000100000
-        -- if condition == 1 then
-        --     if config == 'AM' then
-        --         if #num > 34 then
-        --             config = 'PM'
-        --             local getResponse = makeGetRequest(apiUrl)
-        --             game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
-        --                 game.Players.LocalPlayer)
-        --         end
-        --     else
-        --         if #num < 6 then
-        --             config = 'AM'
-        --             local getResponse = makeGetRequest(apiUrl)
-        --             game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
-        --                 game.Players.LocalPlayer)
-        --         end
-        --     end
-        -- end
+        if condition == 1 then
+            if config == 'AM' then
+                if #num > 34 then
+                    config = 'PM'
+                    local getResponse = makeGetRequest(apiUrl)
+                    game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
+                        game.Players.LocalPlayer)
+                end
+            else
+                if #num < 6 then
+                    config = 'AM'
+                    local getResponse = makeGetRequest(apiUrl)
+                    game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
+                        game.Players.LocalPlayer)
+                end
+            end
+        end
 
         if mailDiamonds > 0 then
             if mailDiamonds > 10000000000 then
