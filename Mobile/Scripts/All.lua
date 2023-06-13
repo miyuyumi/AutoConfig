@@ -27,8 +27,12 @@ local function makePostRequest(url, requestBody)
 end
 
 if game.PlaceId ~= 7722306047 then
-    local getResponse = makeGetRequest(apiUrl)
-    game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse, game.Players.LocalPlayer)
+    while game.PlaceId ~= 7722306047 do
+        local getResponse = makeGetRequest(apiUrl)
+        game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse, game.Players.LocalPlayer)
+        task.wait(10)
+    end
+
 else
     task.wait(20)
 
@@ -144,7 +148,11 @@ else
         task.wait(math.random(45, 90) * 20)
         -- local getResponse = makeGetRequest(apiUrl)
         -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse, game.Players.LocalPlayer)
-        game:GetService("TeleportService"):Teleport(6284583030)
+        while true do
+            game:GetService("TeleportService"):Teleport(6284583030)
+            task.wait(60)
+        end
+
     end)
 
     task.spawn(function()
