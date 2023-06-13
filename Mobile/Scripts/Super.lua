@@ -104,7 +104,7 @@ if isfile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt") 
     delfile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt")
 end
 
-condition = math.random(1, 1)
+condition = math.random(1, 2)
 
 if condition == 1 then -- Exclusives
     if #num <= 10 then
@@ -120,12 +120,20 @@ if condition == 1 then -- Exclusives
             "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Purging.json"))
         writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt", contents)
     end
-    -- else -- Huges
-    --     config = 'PM'
-    --     setRAM()
-    --     local contents = tostring(game:HttpGetAsync(
-    --         "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Huges.json"))
-    --     writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt", contents)
+else -- Huges
+    if #num <= 10 then
+        config = 'AM'
+        setRAM()
+        local contents = tostring(game:HttpGetAsync(
+            "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Sniping.json"))
+        writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt", contents)
+    else
+        config = 'PM'
+        setRAM()
+        local contents = tostring(game:HttpGetAsync(
+            "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Purging.json"))
+        writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt", contents)
+    end
 end
 
 getgenv().boothsnipe = true
