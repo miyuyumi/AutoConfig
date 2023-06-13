@@ -147,12 +147,14 @@ Player.PlayerGui:FindFirstChild("Chat"):FindFirstChild("Frame"):FindFirstChild("
             local pet = sellString:match("%sa%s([%p%w%s]+)%sfrom")
             local seller = sellString:match("from%s([^%s]+)%sfor")
             local price = sellString:match("for%s([^%s]+)%sDiamonds")
-            local currentDiamonds = string.format('%.2f',FrameworkLibrary.Save.Get().Diamonds/1000000000)
+            local sellDiamonds = string.format('%.2f',(FrameworkLibrary.Save.Get().Diamonds+price)/1000000000)
+            local snipeDiamonds = string.format('%.2f',(FrameworkLibrary.Save.Get().Diamonds-price)/1000000000)
+            -- local currentDiamonds = string.format('%.2f',FrameworkLibrary.Save.Get().Diamonds/1000000000)
             if seller == Player.DisplayName then
                 API:Webhook(shared.Settings.SellLink, {
                     ["embeds"] = {{
                         ["title"] = "Sold A " .. pet,
-                        ["description"] = "**Sold For:** " .. price .. " :diamonds:\n**To:** ||" .. buyer .. "||\n**Current Diamonds:** " .. currentDiamonds .."b\n**Account:** ||" .. seller .. "||",
+                        ["description"] = "**Sold For:** " .. price .. " :diamonds:\n**To:** ||" .. buyer .. "||\n**Current Diamonds:** " .. sellDiamonds .."b\n**Account:** ||" .. seller .. "||",
                         ["type"] = "rich",
                         ["color"] = tonumber(0x00ff00)
                     }}
@@ -161,7 +163,7 @@ Player.PlayerGui:FindFirstChild("Chat"):FindFirstChild("Frame"):FindFirstChild("
                 API:Webhook(shared.Settings.SnipeLink, {
                     ["embeds"] = {{
                         ["title"] = "Sniped A " .. pet,
-                        ["description"] = "**Sniped For:** " .. price .. " :diamonds:\n**From:** ||" .. seller .. "||\n**Current Diamonds:** " .. currentDiamonds .."b\n**Account:** ||" .. buyer .. "||",
+                        ["description"] = "**Sniped For:** " .. price .. " :diamonds:\n**From:** ||" .. seller .. "||\n**Current Diamonds:** " .. snipeDiamonds .."b\n**Account:** ||" .. buyer .. "||",
                         ["type"] = "rich",
                         ["color"] = tonumber(0x00ff00)
                     }}
