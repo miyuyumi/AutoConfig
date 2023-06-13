@@ -147,8 +147,8 @@ Player.PlayerGui:FindFirstChild("Chat"):FindFirstChild("Frame"):FindFirstChild("
             local pet = sellString:match("%sa%s([%p%w%s]+)%sfrom")
             local seller = sellString:match("from%s([^%s]+)%sfor")
             local price = sellString:match("for%s([^%s]+)%sDiamonds")
-            local sellDiamonds = string.format('%.2f',(FrameworkLibrary.Save.Get().Diamonds+price)/1000000000)
-            local snipeDiamonds = string.format('%.2f',(FrameworkLibrary.Save.Get().Diamonds-price)/1000000000)
+            local sellDiamonds = string.format('%.2f',(FrameworkLibrary.Save.Get().Diamonds+tonumber(price))/1000000000)
+            local snipeDiamonds = string.format('%.2f',(FrameworkLibrary.Save.Get().Diamonds-tonumber(price))/1000000000)
             -- local currentDiamonds = string.format('%.2f',FrameworkLibrary.Save.Get().Diamonds/1000000000)
             if seller == Player.DisplayName then
                 API:Webhook(shared.Settings.SellLink, {
