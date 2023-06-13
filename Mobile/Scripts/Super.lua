@@ -133,12 +133,12 @@ if condition == 1 then -- Exclusives
             "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Purging.json"))
         writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt", contents)
     end
-else -- Huges
-    config = 'PM'
-    setRAM()
-    local contents = tostring(game:HttpGetAsync(
-        "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Huges.json"))
-    writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt", contents)
+    -- else -- Huges
+    --     config = 'PM'
+    --     setRAM()
+    --     local contents = tostring(game:HttpGetAsync(
+    --         "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Huges.json"))
+    --     writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt", contents)
 end
 
 getgenv().boothsnipe = true
