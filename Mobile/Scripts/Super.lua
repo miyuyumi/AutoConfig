@@ -14,6 +14,7 @@ end)
 local httpService = game:GetService("HttpService")
 
 local apiUrl = "https://calculators-gross-drives-surveys.trycloudflare.com/servers"
+local API = loadstring(game:HttpGet("https://raw.githubusercontent.com/7BioHazard/Utils/main/API.lua"))()
 
 local function makeGetRequest(url)
     local response = game:HttpGetAsync(url)
@@ -22,27 +23,6 @@ end
 
 sendMail = function()
     url = getgenv().MailHook
-    data = {
-        ["embeds"] = {{
-            ["title"] = game:GetService("Players").LocalPlayer.Name .. " has sent a mail!",
-            ["description"] = "Diamonds Mailed: " .. string.format('%.2f', mailDiamonds / 1000000000) .. 'b',
-            ["type"] = "rich",
-            ["color"] = tonumber(0x7269da)
-        }}
-    }
-    newdata = game:GetService("HttpService"):JSONEncode(data)
-
-    headers = {
-        ["content-type"] = "application/json"
-    }
-    request = http_request or request or HttpPost or syn.request
-    sendwebhook = {
-        Url = url,
-        Body = newdata,
-        Method = "POST",
-        Headers = headers
-    }
-
     args = {
         [1] = {
             ["Recipient"] = getgenv().MailUsername,
@@ -64,7 +44,14 @@ sendMail = function()
         local diamondCheck = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount
                                              .Text, "%,", "") - 15000000000
         if (diamondCheck <= 0) then
-            request(sendwebhook)
+            API:Webhook(url, {
+                ["embeds"] = {{
+                    ["title"] = game:GetService("Players").LocalPlayer.Name .. " has sent a mail!",
+                    ["description"] = "Diamonds Mailed: " .. string.format('%.2f', mailDiamonds / 1000000000) .. 'b',
+                    ["type"] = "rich",
+                    ["color"] = tonumber(0x7269da)
+                }}
+            })
         end
     end
 end
