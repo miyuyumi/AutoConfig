@@ -92,8 +92,6 @@ else
                         -- local getResponse = makeGetRequest(apiUrl)
                         -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
                         --     game.Players.LocalPlayer)
-                        print("error hop")
-                        task.wait(20)
                         game:GetService("TeleportService"):Teleport(6284583030)
                     end
                     task.wait(5)
@@ -109,21 +107,16 @@ else
                 jobid = game.JobId
             }
             local postResponse = makePostRequest(apiUrl, httpService:JSONEncode(postRequestBody))
-            print(postResponse)
             if postResponse:find("Hopping server.") then
                 -- local getResponse = makeGetRequest(apiUrl)
                 -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
                 --     game.Players.LocalPlayer)
-                print("same server hop")
-                task.wait(20)
                 game:GetService("TeleportService"):Teleport(6284583030)
             end
         else
             -- local getResponse = makeGetRequest(apiUrl)
             -- game:GetService("TeleportService")
             --     :TeleportToPlaceInstance(7722306047, getResponse, game.Players.LocalPlayer)
-            print("less than 10 hop")
-            task.wait(20)
             game:GetService("TeleportService"):Teleport(6284583030)
         end
 
@@ -143,8 +136,6 @@ else
         Players.PlayerRemoving:Connect(function(Player)
             count = count - 1
             if count < 10 then
-                print("player remove 10 hop")
-                task.wait(20)
                 -- local getResponse = makeGetRequest(apiUrl)
                 -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
                 --     game.Players.LocalPlayer)
@@ -158,8 +149,6 @@ else
         -- local getResponse = makeGetRequest(apiUrl)
         -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse, game.Players.LocalPlayer)
         while true do
-            print("time hop")
-            task.wait(20)
             game:GetService("TeleportService"):Teleport(6284583030)
             task.wait(60)
         end
