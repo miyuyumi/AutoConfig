@@ -109,12 +109,12 @@ else
                 jobid = game.JobId
             }
             local postResponse = makePostRequest(apiUrl, httpService:JSONEncode(postRequestBody))
+            print(postResponse)
             if postResponse:find("Hopping server.") then
                 -- local getResponse = makeGetRequest(apiUrl)
                 -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
                 --     game.Players.LocalPlayer)
                 print("same server hop")
-                print(postResponse)
                 task.wait(20)
                 game:GetService("TeleportService"):Teleport(6284583030)
             end
