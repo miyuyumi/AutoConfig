@@ -114,6 +114,7 @@ else
                 -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
                 --     game.Players.LocalPlayer)
                 print("same server hop")
+                print(postResponse)
                 task.wait(20)
                 game:GetService("TeleportService"):Teleport(6284583030)
             end
