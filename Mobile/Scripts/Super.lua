@@ -136,5 +136,6 @@ else -- Huges
     end
 end
 
+task.wait(10)
 getgenv().boothsnipe = true
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Muhammad6196/Project-WD/main/Mainstring.lua"))()
