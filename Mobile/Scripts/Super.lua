@@ -100,8 +100,8 @@ until lib.Loaded
 myAccount = RAMAccount.new(game:GetService 'Players'.LocalPlayer.Name)
 num = lib.Save.Get().Pets
 
-if isfile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt") then
-    delfile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt")
+if isfile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr1.txt") then
+    delfile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr1.txt")
 end
 
 condition = math.random(1, 2)
@@ -112,13 +112,13 @@ if condition == 1 then -- Exclusives
         setRAM()
         local contents = tostring(game:HttpGetAsync(
             "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Sniping.json"))
-        writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt", contents)
+        writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr1.txt", contents)
     else
         config = 'PM'
         setRAM()
         local contents = tostring(game:HttpGetAsync(
             "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Purging.json"))
-        writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt", contents)
+        writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr1.txt", contents)
     end
 else -- Huges
     if #num <= 10 then
@@ -126,13 +126,13 @@ else -- Huges
         setRAM()
         local contents = tostring(game:HttpGetAsync(
             "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Sniping.json"))
-        writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt", contents)
+        writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr1.txt", contents)
     else
         config = 'PM'
         setRAM()
         local contents = tostring(game:HttpGetAsync(
             "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Purging.json"))
-        writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr.txt", contents)
+        writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr1.txt", contents)
     end
 end
 
