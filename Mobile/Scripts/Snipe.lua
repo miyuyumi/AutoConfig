@@ -176,7 +176,6 @@ local purchased = false
 task.spawn(function()
     while true do
         local booths = Invoke("Get All Booths")
-        print("Iterate")
         for i, v in pairs(booths) do
             for i2, v2 in pairs(v.Listings) do
                 pet = petidtodatatable(i2)
