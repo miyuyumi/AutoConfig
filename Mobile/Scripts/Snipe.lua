@@ -180,8 +180,9 @@ task.spawn(function()
             for i2, v2 in pairs(v.Listings) do
                 pet = petidtodatatable(i2)
                 for _, v3 in pairs(snipeList) do
-                    if v3[1] ~= "" and v3[1] == pet.id and v3[2] >= v2.Price and
+                    if (v3[1] ~= "" and v3[1] == pet.id and v3[2] >= v2.Price) and
                         (v3[3] == pet.type or v3[3] == "Any" or v3[3] == pet.sh) then
+                        print("First if")
                         b = boothLocations[tonumber(i)]
                         teleportToBooth(b)
                         purchased = attemptPurchase(tonumber(i), i2, v2.Price)
@@ -189,6 +190,7 @@ task.spawn(function()
                     elseif v3[3] ~= "" and pet.name then
                         if (v3[4] == pet.rarity or string.find(pet.name, v3[4])) and v3[2] >= v2.Price and
                             (v3[3] == pet.type or v3[3] == "Any" or v3[3] == pet.sh) then
+                            print("Second if")
                             b = boothLocations[tonumber(i)]
                             teleportToBooth(b)
                             purchased = attemptPurchase(tonumber(i), i2, v2.Price)

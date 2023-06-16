@@ -100,8 +100,9 @@ until lib.Loaded
 myAccount = RAMAccount.new(game:GetService 'Players'.LocalPlayer.Name)
 num = lib.Save.Get().Pets
 
-if isfile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr1.txt") then
-    delfile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr1.txt")
+if isfile("Snipe.json") or isfile("Purge.json") then
+    delfile("Snipe.json")
+    delfile("Purge.json")
 end
 
 local snipe = tostring(game:HttpGetAsync(
@@ -121,4 +122,6 @@ else
     getgenv().Config = 'Purge.json'
 end
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Scripts/Snipe.lua"))()
+task.spawn(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Scripts/Snipe.lua"))()
+end)
