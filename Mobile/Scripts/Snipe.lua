@@ -2,6 +2,8 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
+task.wait(20)
+
 local Network = require(game:GetService("ReplicatedStorage").Library.Client.Network)
 local Fire, Invoke = Network.Fire, Network.Invoke
 

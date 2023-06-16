@@ -108,7 +108,7 @@ local snipe = tostring(game:HttpGetAsync(
     "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Sniping.json"))
 writefile("Snipe.json", snipe)
 local purge = tostring(game:HttpGetAsync(
-    "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Sniping.json"))
+    "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Purging.json"))
 writefile("Purge.json", purge)
 
 if #num <= 10 then
