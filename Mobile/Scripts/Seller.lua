@@ -54,6 +54,9 @@ setupvalue(Network.Invoked, 1, function() return true end)
 setupvalue(Network.Fire, 1, function() return true end)
 setupvalue(Network.Fired, 1, function() return true end)
 
+playerPos = CFrame.new(-319.761322, 46.7770004, -2597.34473, 0.761269152, -1.61073377e-08, 0.64843601, 3.39745867e-08,
+    1, -1.50461545e-08, -0.64843601, 3.34845183e-08, 0.761269152)
+
 if isfile("Selling.json") then
     delfile("Selling.json")
 end
@@ -104,6 +107,7 @@ if not getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game
                 task.wait(1)
                 API:VirtualPressButton("E")
                 task.wait(1)
+                Root:PivotTo(playerPos)
             end
         end)
         if getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Trading Booths"]).GetBooth() then

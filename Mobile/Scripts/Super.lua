@@ -104,38 +104,21 @@ if isfile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr1.txt")
     delfile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr1.txt")
 end
 
-condition = math.random(1, 2)
+local snipe = tostring(game:HttpGetAsync(
+    "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Sniping.json"))
+writefile("Snipe.json", snipe)
+local purge = tostring(game:HttpGetAsync(
+    "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Sniping.json"))
+writefile("Purge.json", purge)
 
-if condition == 1 then -- Exclusives
-    if #num <= 10 then
-        config = 'AM'
-        setRAM()
-        local contents = tostring(game:HttpGetAsync(
-            "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Sniping.json"))
-        writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr1.txt", contents)
-    else
-        config = 'PM'
-        setRAM()
-        local contents = tostring(game:HttpGetAsync(
-            "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Purging.json"))
-        writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr1.txt", contents)
-    end
-else -- Huges
-    if #num <= 10 then
-        config = 'AM'
-        setRAM()
-        local contents = tostring(game:HttpGetAsync(
-            "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Sniping.json"))
-        writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr1.txt", contents)
-    else
-        config = 'PM'
-        setRAM()
-        local contents = tostring(game:HttpGetAsync(
-            "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Purging.json"))
-        writefile(game:GetService 'Players'.LocalPlayer.Name .. "_walkerfanXDsssr1.txt", contents)
-    end
+if #num <= 10 then
+    config = 'AM'
+    setRAM()
+    getgenv().Config = 'Snipe.json'
+else
+    config = 'PM'
+    setRAM()
+    getgenv().Config = 'Purge.json'
 end
 
-task.wait(20)
-getgenv().boothsnipe = true
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Muhammad6196/Project-WD/main/Mainstring.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Scripts/Super.lua"))()

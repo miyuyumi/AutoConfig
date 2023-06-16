@@ -60,7 +60,7 @@ local Character = Player.Character or Player.CharacterAdded:Wait()
 local Humanoid = Character:WaitForChild("Humanoid")
 local Root = Character:WaitForChild("HumanoidRootPart")
 local httpService = game:GetService("HttpService")
-local snipeList = httpService:JSONDecode(readfile("Snipe.json"))
+local snipeList = httpService:JSONDecode(readfile(getgenv().Config))
 
 Player.CharacterAdded:Connect(function(char)
     Character = char
@@ -152,61 +152,59 @@ boothLocations = {{-323.891968, 37.4429474, -2525.14819, -0.643128514, 0, 0.7657
                   {-310.781982, 49.0943146, -2287.14331, 0.766061246, 0, 0.642767608, 0, 1, 0, -0.642767608, 0,
                    0.766061246}}
 
+function teleportToBooth(b)
+    Root:PivotTo(CFrame.new(b[1], b[2], b[3], b[4], b[5], b[6], b[7], b[8], b[9], b[10], b[11], b[12]))
+    task.wait(0.5)
+end
+
+function attemptPurchase(boothIndex, petUID, price)
+    for x = 1, 10 do
+        local purchased = Invoke("Purchase Trading Booth Pet", boothIndex, petUID, price)
+        if purchased then
+            return true
+        end
+        task.wait(0.1)
+    end
+
+    return false
+end
+
+local purchased = false
 task.spawn(function()
     while true do
-        local startTime = os.clock()
-        booths = Invoke("Get All Booths")
-        for i, v in pairs(booths) do -- booths
-            for i2, v2 in pairs(v.Listings) do -- pets
+        local booths = Invoke("Get All Booths")
+        for i, v in pairs(booths) do
+            for i2, v2 in pairs(v.Listings) do
                 pet = petidtodatatable(i2)
-                -- print("From Booth ID:", i)
-                -- print("Pet UID:", i2)
-                -- print("Pet Price:", v2.Price)
-
-                -- print("Pet Name:", pet.name)
-                -- print("Pet Type:", pet.type)
-                -- print("Pet Rarity:", pet.rarity)
-                -- print("Pet ID:", pet.id)
-                for i3, v3 in pairs(snipeList) do
-                    pcall(function()
-                        if v3[1] ~= "" then
-                            if v3[1] == pet.id and v3[2] >= v2.Price and v3[3][1] == pet.type then
-                                b = boothLocations[tonumber(i)]
-                                Root:PivotTo(CFrame.new(b[1], b[2], b[3], b[4], b[5], b[6], b[7], b[8], b[9], b[10],
-                                    b[11], b[12]))
-                                print("Snipe Found!")
-                                print("Pet Name:", pet.name)
-                                print("Pet Price:", v2.Price)
-                                print("------------")
-                                task.wait(0.3)
-                                Root:PivotTo(playerPos)
-                                task.wait(0.3)
-                            end
-                        elseif v3[3] ~= "" and pet.name then
-                            if (v3[4] == pet.rarity or string.find(pet.name, v3[4])) and v3[2] >= v2.Price and v3[3][1] ==
-                                pet.type then
-                                b = boothLocations[tonumber(i)]
-                                Root:PivotTo(CFrame.new(b[1], b[2], b[3], b[4], b[5], b[6], b[7], b[8], b[9], b[10],
-                                    b[11], b[12]))
-                                print("Snipe Found!")
-                                print("Pet Name:", pet.name)
-                                print("Pet Price:", v2.Price)
-                                print("------------")
-                                task.wait(0.3)
-                                Root:PivotTo(playerPos)
-                                task.wait(0.3)
-                            end
+                for _, v3 in pairs(snipeList) do
+                    if v3[1] ~= "" and v3[1] == pet.id and v3[2] >= v2.Price and
+                        (v3[3] == pet.type or v3[3] == "Any" or v3[3] == pet.sh) then
+                        b = boothLocations[tonumber(i)]
+                        teleportToBooth(b)
+                        purchased = attemptPurchase(tonumber(i), i2, v2.Price)
+                        Root:PivotTo(playerPos)
+                    elseif v3[3] ~= "" and pet.name then
+                        if (v3[4] == pet.rarity or string.find(pet.name, v3[4])) and v3[2] >= v2.Price and
+                            (v3[3] == pet.type or v3[3] == "Any" or v3[3] == pet.sh) then
+                            b = boothLocations[tonumber(i)]
+                            teleportToBooth(b)
+                            purchased = attemptPurchase(tonumber(i), i2, v2.Price)
+                            Root:PivotTo(playerPos)
                         end
-                    end)
+                    end
+                    if purchased then
+                        break
+                    end
+                end
+                if purchased then
+                    break
                 end
             end
+            if purchased then
+                purchased = false
+                task.wait(5)
+                break
+            end
         end
-        print("------------")
-
-        local endTime = os.clock()
-        local elapsedTime = endTime - startTime
-        print("Time taken:", elapsedTime, "seconds")
-        print("------------")
     end
 end)
-
