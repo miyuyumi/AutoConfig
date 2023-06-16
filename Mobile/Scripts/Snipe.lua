@@ -202,8 +202,9 @@ task.spawn(function()
                             end
                             b = boothLocations[tonumber(i)]
                             teleportToBooth(b)
+                            task.wait(3)
                             -- purchased = attemptPurchase(tonumber(i), i2, v2.Price)
-                            -- Root:PivotTo(playerPos)
+                            Root:PivotTo(playerPos)
                         end
                     end
                     if purchased then
