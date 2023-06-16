@@ -188,7 +188,7 @@ task.spawn(function()
                         teleportToBooth(b)
                         purchased = attemptPurchase(tonumber(i), i2, v2.Price)
                         Root:PivotTo(playerPos)
-                    elseif v3[4] ~= "" and pet.name then
+                    elseif v3[3] ~= "" and pet.name then
                         if (v3[4] == pet.rarity or string.find(pet.name, v3[4])) and v3[2] >= v2.Price and
                             (v3[3] == pet.type or v3[3] == "Any" or v3[3] == pet.sh) then
                             print("Second if")
