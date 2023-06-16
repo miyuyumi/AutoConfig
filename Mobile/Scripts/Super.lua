@@ -121,4 +121,4 @@ else
     getgenv().Config = 'Purge.json'
 end
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Scripts/Super.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Scripts/Snipe.lua"))()
