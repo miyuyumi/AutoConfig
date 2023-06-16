@@ -183,7 +183,6 @@ task.spawn(function()
                 for _, v3 in pairs(snipeList) do
                     if (v3[1] ~= "" and v3[1] == pet.id and v3[2] >= v2.Price) and
                         (v3[3] == pet.type or v3[3] == "Any" or v3[3] == pet.sh) then
-                        print("First if")
                         b = boothLocations[tonumber(i)]
                         teleportToBooth(b)
                         purchased = attemptPurchase(tonumber(i), i2, v2.Price)
@@ -191,21 +190,9 @@ task.spawn(function()
                     elseif v3[4] ~= "" and pet.name then
                         if (v3[4] == pet.rarity or string.find(pet.name, v3[4])) and v3[2] >= v2.Price and
                             (v3[3] == pet.type or v3[3] == "Any" or v3[3] == pet.sh) then
-                            print("Second if")
-                            if (v3[4] == pet.rarity or string.find(pet.name, v3[4])) then
-                                print("Third if")
-                                if v3[2] >= v2.Price then
-                                    print("Fourth if")
-                                    if (v3[3] == pet.type or v3[3] == "Any" or v3[3] == pet.sh) then
-                                        print("Fifth if")
-                                        print(pet.name, v2.Price, pet.rarity, pet.type)
-                                    end
-                                end
-                            end
                             b = boothLocations[tonumber(i)]
                             teleportToBooth(b)
-                            task.wait(3)
-                            -- purchased = attemptPurchase(tonumber(i), i2, v2.Price)
+                            purchased = attemptPurchase(tonumber(i), i2, v2.Price)
                             Root:PivotTo(playerPos)
                         end
                     end
