@@ -197,6 +197,7 @@ task.spawn(function()
                                     print("Fourth if")
                                     if (v3[3] == pet.type or v3[3] == "Any" or v3[3] == pet.sh) then
                                         print("Fifth if")
+                                        print(pet.name, v2.Price, pet.rarity, pet.type)
                                     end
                                 end
                             end
