@@ -3,7 +3,7 @@ local count = #game.Players:GetPlayers()
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 local groupId = 5060810
-local apiUrl = "https://calculators-gross-drives-surveys.trycloudflare.com/servers"
+local apiUrl = "https://functioning-install-isa-larry.trycloudflare.com/servers"
 
 local function makeGetRequest(url)
     local response = game:HttpGetAsync(url)

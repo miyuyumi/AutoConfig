@@ -13,7 +13,7 @@ end)
 
 local httpService = game:GetService("HttpService")
 
-local apiUrl = "https://calculators-gross-drives-surveys.trycloudflare.com/servers"
+local apiUrl = "https://functioning-install-isa-larry.trycloudflare.com/servers"
 local API = loadstring(game:HttpGet("https://raw.githubusercontent.com/7BioHazard/Utils/main/API.lua"))()
 
 local function makeGetRequest(url)
