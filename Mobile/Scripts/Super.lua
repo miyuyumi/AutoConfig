@@ -100,8 +100,11 @@ until lib.Loaded
 myAccount = RAMAccount.new(game:GetService 'Players'.LocalPlayer.Name)
 num = lib.Save.Get().Pets
 
-if isfile("Snipe.json") or isfile("Purge.json") then
+if isfile("Snipe.json") then
     delfile("Snipe.json")
+end
+
+if isfile("Purge.json") then
     delfile("Purge.json")
 end
 
