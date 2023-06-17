@@ -157,8 +157,8 @@ else
 
     task.spawn(function()
         task.wait(5)
-        -- setfpscap(10)
-        -- game:GetService("RunService"):Set3dRenderingEnabled(false)
+        setfpscap(10)
+        game:GetService("RunService"):Set3dRenderingEnabled(false)
     end)
 
     task.spawn(function()
