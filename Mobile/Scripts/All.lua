@@ -37,6 +37,7 @@ else
     task.wait(20)
 
     task.spawn(function()
+        print("Loaded Error Message Notifier")
         repeat
             task.wait()
         until game.CoreGui:FindFirstChild('RobloxPromptGui')
@@ -101,6 +102,7 @@ else
     end)
 
     task.spawn(function()
+        print("Loaded Hop Checker")
         if count > 10 then
             local postRequestBody = {
                 username = game:GetService 'Players'.LocalPlayer.Name,
@@ -145,6 +147,7 @@ else
     end)
 
     task.spawn(function()
+        print("Loaded Hopper")
         task.wait(math.random(45, 90) * 20)
         -- local getResponse = makeGetRequest(apiUrl)
         -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse, game.Players.LocalPlayer)
@@ -156,16 +159,19 @@ else
     end)
 
     task.spawn(function()
+        print("Loaded Performance")
         task.wait(5)
         setfpscap(10)
         game:GetService("RunService"):Set3dRenderingEnabled(false)
     end)
 
     task.spawn(function()
+        print("Loading Seller")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Scripts/Seller.lua"))()
     end)
 
     task.spawn(function()
+        print("Loading Super")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Scripts/Super.lua"))()
     end)
 end
