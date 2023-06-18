@@ -2,12 +2,11 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
-Library = require(game.ReplicatedStorage.Framework.Library)
+local Network = require(game:GetService("ReplicatedStorage").Library.Client.Network)
+local Fire, Invoke = Network.Fire, Network.Invoke
 
-InvokeHook = hookfunction(getupvalue(Library.Network.Invoke, 1), function(...)
-    return true
-end)
-FireHook = hookfunction(getupvalue(Library.Network.Fire, 1), function(...)
+local old
+old = hookfunction(getupvalue(Fire, 1), function(...)
     return true
 end)
 
@@ -32,18 +31,13 @@ sendMail = function()
         }
     }
 
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-396, 33, -2549)
-    task.wait(1)
-    Library.Network.Invoke("Send Mail", unpack(args))
-
-    local diamondCheck = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text,
-        "%,", "") - 15000000000
-
-    if (diamondCheck <= 0) then
-        task.wait(1)
-        local diamondCheck = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount
-                                             .Text, "%,", "") - 15000000000
-        if (diamondCheck <= 0) then
+    local mailed = false
+    while mailed == false do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-396, 33, -2549)
+        task.wait(0.5)
+        mailed = Invoke("Send Mail", unpack(args))
+        task.wait(0.5)
+        if mailed == true then
             API:Webhook(url, {
                 ["embeds"] = {{
                     ["title"] = game:GetService("Players").LocalPlayer.Name .. " has sent a mail!",
