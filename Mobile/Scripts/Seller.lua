@@ -130,11 +130,10 @@ if not getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game
         pcall(function()
             if v.Info.SurfaceGui.Frame.Top.Text == "Unclaimed Stand" then
                 Root:PivotTo(v.Booth.CFrame)
-                task.wait(3)
+                task.wait(1)
                 VirtualPressButton("E")
-                task.wait(3)
+                task.wait(1)
                 Root:PivotTo(playerPos)
-                task.wait(3)
             end
         end)
         if getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Trading Booths"]).GetBooth() then
