@@ -8,8 +8,6 @@ if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
 
--- local Identity = set_thread_identity(1)
-
 local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/preztel/AzureLibrary/master/uilib.lua", true))()
 
 local lib = require(game.ReplicatedStorage:WaitForChild("Framework"):WaitForChild("Library"))
@@ -21,9 +19,16 @@ end
 task.wait(10)
 local SellingTab = UILibrary:CreateTab("Seller", "Selling script has loaded", true)
 
-local API = loadstring(game:HttpGet("https://raw.githubusercontent.com/7BioHazard/Utils/main/API.lua"))()
+function Load()
+    Services = {}
+    setmetatable(Services, {
+        __index = function(_, Service_Name)
+            return game:GetService(Service_Name)
+        end
+    })
+end
 
-API:Load()
+Load()
 
 function Webhook(Url, Data)
     request {
@@ -34,7 +39,13 @@ function Webhook(Url, Data)
     }
 end
 
-local Services = API.Services
+function VirtualPressButton(Button)
+    game:GetService("VirtualInputManager"):SendKeyEvent(true, Button, false, nil)
+    task.wait()
+    game:GetService("VirtualInputManager"):SendKeyEvent(false, Button, false, nil)
+end
+
+local Services = Services
 local Players = Services.Players
 local TweenService = Services.TweenService
 local RunService = Services.RunService
@@ -65,7 +76,7 @@ setupvalue(Network.Invoked, 1, function() return true end)
 setupvalue(Network.Fire, 1, function() return true end)
 setupvalue(Network.Fired, 1, function() return true end)
 
-playerPos = CFrame.new(-319.761322, 46.7770004, -2597.34473, 0.761269152, -1.61073377e-08, 0.64843601, 3.39745867e-08,
+local playerPos = CFrame.new(-319.761322, 46.7770004, -2597.34473, 0.761269152, -1.61073377e-08, 0.64843601, 3.39745867e-08,
     1, -1.50461545e-08, -0.64843601, 3.34845183e-08, 0.761269152)
 
 if isfile("Selling.json") then
@@ -105,7 +116,11 @@ local function sellingFunction()
     end)
     
     for _, v in next, toList do
-        Network.Invoke("Add Trading Booth Pet", {v})
+        local added = false
+        while added == false do
+            added = Network.Invoke("Add Trading Booth Pet", {v})
+            task.wait(0.1)
+        end        
         task.wait(1)
     end
 end
@@ -116,7 +131,7 @@ if not getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game
             if v.Info.SurfaceGui.Frame.Top.Text == "Unclaimed Stand" then
                 Root:PivotTo(v.Booth.CFrame)
                 task.wait(3)
-                API:VirtualPressButton("E")
+                VirtualPressButton("E")
                 task.wait(3)
                 Root:PivotTo(playerPos)
                 task.wait(3)
