@@ -2,7 +2,7 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
-local Identity = set_thread_identity(2)
+-- local Identity = set_thread_identity(2)
 
 task.wait(20)
 

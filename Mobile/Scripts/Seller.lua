@@ -8,7 +8,7 @@ if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
 
-local Identity = set_thread_identity(1)
+-- local Identity = set_thread_identity(1)
 
 local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/preztel/AzureLibrary/master/uilib.lua", true))()
 
