@@ -24,7 +24,7 @@ local function makeGetRequest(url)
 end
 
 function Webhook(Url, Data)
-    (fluxus.request or function()
+    ((fluxus and fluxus.request) or (http and http.request) or http_request or function()
     end) {
         Url = Url,
         Method = "POST",
@@ -40,7 +40,7 @@ sendError = function()
     url = getgenv().DebugHook
 
     if string.match(errorMessage, "unexpected client behavior") or string.match(errorMessage, "Please rejoin%.") then
-        Webhook(getgenv().DebugHook, {
+        Webhook(url, {
             ["content"] = "@everyone",
             ["embeds"] = {{
                 ["title"] = game:GetService("Players").LocalPlayer.Name .. " has been disconnected!",
@@ -50,7 +50,7 @@ sendError = function()
             }}
         })
     else
-        Webhook(getgenv().DebugHook, {
+        Webhook(url, {
             ["embeds"] = {{
                 ["title"] = game:GetService("Players").LocalPlayer.Name .. " has been disconnected!",
                 ["description"] = errorMessage,
