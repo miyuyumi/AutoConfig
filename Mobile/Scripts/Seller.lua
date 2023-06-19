@@ -115,9 +115,9 @@ if not getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game
         pcall(function()
             if v.Info.SurfaceGui.Frame.Top.Text == "Unclaimed Stand" then
                 Root:PivotTo(v.Booth.CFrame)
-                task.wait(1)
+                task.wait(3)
                 API:VirtualPressButton("E")
-                task.wait(1)
+                task.wait(3)
                 Root:PivotTo(playerPos)
             end
         end)
