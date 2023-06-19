@@ -15,9 +15,8 @@ local function makePostRequest(url, requestBody)
         ["content-type"] = "application/json"
     }
 
-    request = (fluxus and fluxus.request) or (http and http.request) or http_request or function()
-    end
-    sendRequest = {
+    local request = request
+    local sendRequest = {
         Url = url,
         Body = requestBody,
         Method = "POST",
@@ -28,8 +27,7 @@ local function makePostRequest(url, requestBody)
 end
 
 function Webhook(Url, Data)
-    ((fluxus and fluxus.request) or (http and http.request) or http_request or function()
-    end) {
+    request {
         Url = Url,
         Method = "POST",
         Headers = {

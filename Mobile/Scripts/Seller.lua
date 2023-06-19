@@ -8,6 +8,8 @@ if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
 
+local Identity = set_thread_identity(1)
+
 local UILibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/preztel/AzureLibrary/master/uilib.lua", true))()
 
 local lib = require(game.ReplicatedStorage:WaitForChild("Framework"):WaitForChild("Library"))
@@ -24,7 +26,7 @@ local API = loadstring(game:HttpGet("https://raw.githubusercontent.com/7BioHazar
 API:Load()
 
 function Webhook(Url, Data)
-    ((fluxus and fluxus.request) or (http and http.request) or http_request or function() end){
+    request {
         Url = Url,
         Method = "POST",
         Headers = {["Content-Type"] = "application/json"},
@@ -45,8 +47,6 @@ local Player = game:GetService("Players").LocalPlayer
 local Character = Player.Character or Player.CharacterAdded:Wait()
 local Humanoid = Character:WaitForChild("Humanoid")
 local Root = Character:WaitForChild("HumanoidRootPart")
-
-local Identity = fluxus.set_thread_identity()
 
 local PSX_Library_Instance = ReplicatedStorage:WaitForChild("Library")
 local PSX_Library = require(PSX_Library_Instance)

@@ -24,8 +24,7 @@ local function makeGetRequest(url)
 end
 
 function Webhook(Url, Data)
-    ((fluxus and fluxus.request) or (http and http.request) or http_request or function()
-    end) {
+    request {
         Url = Url,
         Method = "POST",
         Headers = {
