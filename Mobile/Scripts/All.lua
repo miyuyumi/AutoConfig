@@ -102,11 +102,10 @@ else
 
     task.spawn(function()
         if count > 10 then
-            continue
-            -- local postRequestBody = {
-            --     username = game:GetService 'Players'.LocalPlayer.Name,
-            --     jobid = game.JobId
-            -- }
+            local postRequestBody = {
+                username = game:GetService 'Players'.LocalPlayer.Name,
+                jobid = game.JobId
+            }
             -- local postResponse = makePostRequest(apiUrl, httpService:JSONEncode(postRequestBody))
             -- if postResponse:find("Hopping server.") then
             -- local getResponse = makeGetRequest(apiUrl)
