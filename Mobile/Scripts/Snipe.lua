@@ -12,6 +12,8 @@ old = hookfunction(getupvalue(Fire, 1), function(...)
     return true
 end)
 
+local Identity = fluxus.set_thread_identity(2)
+
 function GetPetDataUID(uid)
     local framework = require(game.ReplicatedStorage:WaitForChild("Framework"):WaitForChild("Library"))
     local petCommands = framework.PetCmds

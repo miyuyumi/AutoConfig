@@ -12,10 +12,10 @@ end)
 local httpService = game:GetService("HttpService")
 
 local apiUrl = "https://functioning-install-isa-larry.trycloudflare.com/servers"
-local Identity = fluxus.set_thread_identity()
+local Identity = fluxus.set_thread_identity(1)
 
 function Webhook(Url, Data)
-    (fluxus.request or function()
+    ((fluxus and fluxus.request) or (http and http.request) or http_request or function()
     end) {
         Url = Url,
         Method = "POST",
@@ -25,6 +25,7 @@ function Webhook(Url, Data)
         Body = game:GetService("HttpService"):JSONEncode(Data)
     }
 end
+
 local function makeGetRequest(url)
     local response = game:HttpGetAsync(url)
     return httpService:JSONDecode(response)["jobID"]

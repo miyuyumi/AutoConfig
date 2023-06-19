@@ -15,8 +15,8 @@ local function makePostRequest(url, requestBody)
         ["content-type"] = "application/json"
     }
 
-    request = (fluxus.request or function()
-    end)
+    request = (fluxus and fluxus.request) or (http and http.request) or http_request or function()
+    end
     sendRequest = {
         Url = url,
         Body = requestBody,
@@ -28,7 +28,7 @@ local function makePostRequest(url, requestBody)
 end
 
 function Webhook(Url, Data)
-    (fluxus.request or function()
+    ((fluxus and fluxus.request) or (http and http.request) or http_request or function()
     end) {
         Url = Url,
         Method = "POST",
@@ -58,9 +58,10 @@ else
 
         sendError = function()
             errorMessage = promptOverlay.ErrorPrompt.MessageArea.ErrorFrame.ErrorMessage.Text
+            url = getgenv().DebugHook
 
             if string.match(errorMessage, "unexpected client behavior") or string.match(errorMessage, "Please rejoin%.") then
-                Webhook(getgenv().DebugHook, {
+                Webhook(url, {
                     ["content"] = "@everyone",
                     ["embeds"] = {{
                         ["title"] = game:GetService("Players").LocalPlayer.Name .. " has been disconnected!",
@@ -69,9 +70,8 @@ else
                         ["color"] = tonumber(0x7269da)
                     }}
                 })
-
             else
-                Webhook(getgenv().DebugHook, {
+                Webhook(url, {
                     ["embeds"] = {{
                         ["title"] = game:GetService("Players").LocalPlayer.Name .. " has been disconnected!",
                         ["description"] = errorMessage,
@@ -106,7 +106,7 @@ else
             }
             local postResponse = makePostRequest(apiUrl, httpService:JSONEncode(postRequestBody))
             if postResponse:find("Hopping server.") then
-                local getResponse = makeGetRequest(apiUrl)
+                -- local getResponse = makeGetRequest(apiUrl)
                 -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
                 --     game.Players.LocalPlayer)
                 game:GetService("TeleportService"):Teleport(6284583030)

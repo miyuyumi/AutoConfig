@@ -24,7 +24,7 @@ local API = loadstring(game:HttpGet("https://raw.githubusercontent.com/7BioHazar
 API:Load()
 
 function Webhook(Url, Data)
-    (fluxus.request or function() end){
+    ((fluxus and fluxus.request) or (http and http.request) or http_request or function() end){
         Url = Url,
         Method = "POST",
         Headers = {["Content-Type"] = "application/json"},
