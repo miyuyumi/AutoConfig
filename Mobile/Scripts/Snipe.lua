@@ -59,6 +59,8 @@ function petidtodatatable(id)
     return datatable
 end
 
+print("Loaded Sniper")
+
 local Player = game:GetService("Players").LocalPlayer
 local Character = Player.Character or Player.CharacterAdded:Wait()
 local Humanoid = Character:WaitForChild("Humanoid")
