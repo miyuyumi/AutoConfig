@@ -154,7 +154,7 @@ Player.PlayerGui:FindFirstChild("Chat"):FindFirstChild("Frame"):FindFirstChild("
             local seller = sellString:match("from%s([^%s]+)%sfor")
             local price = sellString:match("for%s([^%s]+)%sDiamonds")
             local currentDiamonds = string.format('%.2f',FrameworkLibrary.Save.Get().Diamonds/1000000000)
-            if seller == Player.DisplayName then
+            if seller == Player.DisplayName and string.find(pet, "Huge") then
                 API:Webhook(shared.Settings.SellLink, {
                     ["embeds"] = {{
                         ["title"] = "Sold A " .. pet,
@@ -163,7 +163,7 @@ Player.PlayerGui:FindFirstChild("Chat"):FindFirstChild("Frame"):FindFirstChild("
                         ["color"] = tonumber(0x00ff00)
                     }}
                 })
-            elseif buyer == Player.DisplayName then
+            elseif buyer == Player.DisplayName and string.find(pet, "Huge") then
                 API:Webhook(shared.Settings.SnipeLink, {
                     ["embeds"] = {{
                         ["title"] = "Sniped A " .. pet,
