@@ -23,6 +23,15 @@ local API = loadstring(game:HttpGet("https://raw.githubusercontent.com/7BioHazar
 
 API:Load()
 
+function Webhook(Url, Data)
+    (fluxus.request or function() end){
+        Url = Url,
+        Method = "POST",
+        Headers = {["Content-Type"] = "application/json"},
+        Body = game:GetService("HttpService"):JSONEncode(Data)
+    }
+end
+
 local Services = API.Services
 local Players = Services.Players
 local TweenService = Services.TweenService
@@ -36,6 +45,8 @@ local Player = game:GetService("Players").LocalPlayer
 local Character = Player.Character or Player.CharacterAdded:Wait()
 local Humanoid = Character:WaitForChild("Humanoid")
 local Root = Character:WaitForChild("HumanoidRootPart")
+
+local Identity = fluxus.set_thread_identity()
 
 local PSX_Library_Instance = ReplicatedStorage:WaitForChild("Library")
 local PSX_Library = require(PSX_Library_Instance)
@@ -147,14 +158,14 @@ Player.PlayerGui:FindFirstChild("Chat"):FindFirstChild("Frame"):FindFirstChild("
         end
         --print(Child:FindFirstChild("TextLabel").Text)
         if string.find(Child:FindFirstChild("TextLabel").Text, Player.DisplayName) then
-            sellString = tostring(Child:FindFirstChild("TextLabel").Text)
+            local sellString = tostring(Child:FindFirstChild("TextLabel").Text)
             local buyer = sellString:match("(%S+)%spurchased")
             local pet = sellString:match("%sa%s([%p%w%s]+)%sfrom")
             local seller = sellString:match("from%s([^%s]+)%sfor")
             local price = sellString:match("for%s([^%s]+)%sDiamonds")
             local currentDiamonds = string.format('%.2f',FrameworkLibrary.Save.Get().Diamonds/1000000000)
             if seller == Player.DisplayName and string.find(pet, "Huge") then
-                API:Webhook(shared.Settings.SellLink, {
+                Webhook(shared.Settings.SellLink, {
                     ["embeds"] = {{
                         ["title"] = "Sold A " .. pet,
                         ["description"] = "**Sold For:** " .. price .. " :diamonds:\n**To:** ||" .. buyer .. "||\n**Current Diamonds:** " .. currentDiamonds .."b\n**Account:** ||" .. seller .. "||",
@@ -163,7 +174,7 @@ Player.PlayerGui:FindFirstChild("Chat"):FindFirstChild("Frame"):FindFirstChild("
                     }}
                 })
             elseif buyer == Player.DisplayName and string.find(pet, "Huge") then
-                API:Webhook(shared.Settings.SnipeLink, {
+                Webhook(shared.Settings.SnipeLink, {
                     ["embeds"] = {{
                         ["title"] = "Sniped A " .. pet,
                         ["description"] = "**Sniped For:** " .. price .. " :diamonds:\n**From:** ||" .. seller .. "||\n**Current Diamonds:** " .. currentDiamonds .."b\n**Account:** ||" .. buyer .. "||",

