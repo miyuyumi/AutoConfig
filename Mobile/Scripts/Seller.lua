@@ -119,6 +119,7 @@ if not getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game
                 API:VirtualPressButton("E")
                 task.wait(3)
                 Root:PivotTo(playerPos)
+                task.wait(3)
             end
         end)
         if getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Trading Booths"]).GetBooth() then
