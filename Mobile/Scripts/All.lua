@@ -102,6 +102,7 @@ else
 
     task.spawn(function()
         if count > 10 then
+            continue
             -- local postRequestBody = {
             --     username = game:GetService 'Players'.LocalPlayer.Name,
             --     jobid = game.JobId
@@ -111,7 +112,7 @@ else
             -- local getResponse = makeGetRequest(apiUrl)
             -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
             --     game.Players.LocalPlayer)
-            game:GetService("TeleportService"):Teleport(6284583030)
+            -- game:GetService("TeleportService"):Teleport(6284583030)
             -- end
         else
             -- local getResponse = makeGetRequest(apiUrl)
