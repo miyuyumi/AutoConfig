@@ -3,7 +3,6 @@ if not game:IsLoaded() then
 end
 
 task.wait(20)
-print("Loaded sniper")
 
 local Network = require(game:GetService("ReplicatedStorage").Library.Client.Network)
 local Fire, Invoke = Network.Fire, Network.Invoke

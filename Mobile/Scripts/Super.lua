@@ -9,7 +9,6 @@ local old
 old = hookfunction(getupvalue(Fire, 1), function(...)
     return true
 end)
-print("Loaded Super")
 local httpService = game:GetService("HttpService")
 
 local apiUrl = "https://functioning-install-isa-larry.trycloudflare.com/servers"
@@ -120,6 +119,5 @@ else
 end
 
 task.spawn(function()
-    print("Loading Sniper")
     loadstring(game:HttpGet("https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Scripts/Snipe.lua"))()
 end)
