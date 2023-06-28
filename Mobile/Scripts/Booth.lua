@@ -233,9 +233,7 @@ local function addPet()
     end
 end
 
-local Purchasing = false
 local function attemptPurchase(boothIndex, petUID, price)
-    Purchasing = true
     local Success = false
     repeat
         Success = Invoke("Purchase Trading Booth Pet", boothIndex, petUID, price)
@@ -279,9 +277,7 @@ local function snipePet()
                                         v3[2] >= v2.Price and CheckTypeOrRarity("Type", Settings, Pet) then
                                         Root:PivotTo(v.Model.Booth.CFrame)
                                         Purchased = attemptPurchase(tonumber(i), i2, v2.Price)
-                                        if not Purchasing then
                                             Root:PivotTo(playerPos)
-                                        end
                                     elseif v3[4] ~= "" then
                                         Settings["Rarities"] = {
                                             ["Basic"] = (SettingsChecker(v3[4], "Basic") and true) or false,
@@ -300,9 +296,7 @@ local function snipePet()
                                             CheckTypeOrRarity("Rarity", Settings, Pet) then
                                             Root:PivotTo(v.Model.Booth.CFrame)
                                             Purchased = attemptPurchase(tonumber(i), i2, v2.Price)
-                                            if not Purchasing then
                                                 Root:PivotTo(playerPos)
-                                            end
                                         end
                                     end
                                     if Purchased then
