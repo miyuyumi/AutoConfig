@@ -128,5 +128,5 @@ else
 end
 
 task.spawn(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Scripts/Snipe.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Scripts/Booth.lua"))()
 end)

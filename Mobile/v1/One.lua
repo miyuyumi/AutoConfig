@@ -6,13 +6,11 @@ getgenv().DebugHook =
     "https://discord.com/api/webhooks/1100659121256157184/b026lTPa9QyEyB_BNayvzWfgBLWNj4qdaVb9VIAZU9bFwQ49aO-_0WaxarpLHsWiCO0X"
 getgenv().MailHook =
     "https://discord.com/api/webhooks/1085614599480545403/gVUJwGgNCEKd__c6gbirNP2mMLysdBbAI80OgTe8wR0st7BFXvFGiVuYrZDCRuVYnBSF"
-getgenv().MilkupKey = ""
 getgenv().MailUsername = "miyufii"
 getgenv().SellHook =
     "https://discord.com/api/webhooks/1081501111795597443/JCy46DAgd-Bzn5CeAbP6Z0pFKHmm0FnHfqeV9tE9yv7PAlJSZrijm-bUX4ihBMhEMxET"
 getgenv().SnipeHook =
     "https://discord.com/api/webhooks/1081499816279949362/7ZdYeFx_rJnTHmTnXbQH6zd8RCSjZUF5QuPcmDhsuNeRkuz5cnibejS1x_kGOz4xBHMW"
-getgenv().HugeKey = ""
 
 local httpService = game:GetService("HttpService")
 local promptOverlay = game.CoreGui.RobloxPromptGui.promptOverlay
