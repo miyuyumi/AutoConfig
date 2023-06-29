@@ -240,7 +240,6 @@ local function attemptPurchase(boothIndex, petUID, price)
         task.wait()
     until CheckForSnipePet(petUID) == false
     if Success then
-        Purchasing = false
         return Success
     end
 end
