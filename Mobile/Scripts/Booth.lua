@@ -57,6 +57,40 @@ local function Webhook(Url, Data)
     }
 end
 
+local function addPet()
+    inventoryList = {}
+    for _, v in pairs(Library.Save.Get().Pets) do
+        if not v.l then
+            for _, v2 in pairs(sellingList) do
+                if v2[1] ~= v.id then
+                    continue
+                end
+                local rarity = (v.g and "Golden") or (v.r and "Rainbow") or (v.dm and "Dark Matter") or "Regular"
+                if v2[3][1] ~= rarity then
+                    continue
+                end
+
+                if v2[3][2] ~= nil and not v.sh then
+                    continue
+                end
+
+                table.insert(inventoryList, {v.uid, v2[2]})
+                break
+            end
+        end
+    end
+
+    table.sort(inventoryList, function(a, b)
+        return a[2] > b[2]
+    end)
+
+    for _, v in pairs(inventoryList) do
+        if not table.find(addedList, v[1]) then
+            Invoke("Add Trading Booth Pet", {v})
+        end
+    end
+end
+
 Player.PlayerGui:FindFirstChild("Chat"):FindFirstChild("Frame"):FindFirstChild("ChatChannelParentFrame"):FindFirstChild(
     "Frame_MessageLogDisplay"):FindFirstChild("Scroller").ChildAdded:Connect(function(Child)
     if Child:IsA("Frame") and Child.Name == "Frame" then
@@ -243,39 +277,7 @@ local function sellPet()
     end
 end
 
-local function addPet()
-    inventoryList = {}
-    for _, v in pairs(Library.Save.Get().Pets) do
-        if not v.l then
-            for _, v2 in pairs(sellingList) do
-                if v2[1] ~= v.id then
-                    continue
-                end
-                local rarity = (v.g and "Golden") or (v.r and "Rainbow") or (v.dm and "Dark Matter") or "Regular"
-                if v2[3][1] ~= rarity then
-                    continue
-                end
 
-                if v2[3][2] ~= nil and not v.sh then
-                    continue
-                end
-
-                table.insert(inventoryList, {v.uid, v2[2]})
-                break
-            end
-        end
-    end
-
-    table.sort(inventoryList, function(a, b)
-        return a[2] > b[2]
-    end)
-
-    for _, v in pairs(inventoryList) do
-        if not table.find(addedList, v[1]) then
-            Invoke("Add Trading Booth Pet", {v})
-        end
-    end
-end
 
 local function attemptPurchase(boothIndex, petUID, price)
     local Success = false
