@@ -41,6 +41,11 @@ local snipeList = HttpService:JSONDecode(readfile(getgenv().Config))
 local inventoryList = {}
 local addedList = {}
 
+Player.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
+
 local function Webhook(Url, Data)
     request {
         Url = Url,
@@ -51,6 +56,45 @@ local function Webhook(Url, Data)
         Body = HttpService:JSONEncode(Data)
     }
 end
+
+Player.PlayerGui:FindFirstChild("Chat"):FindFirstChild("Frame"):FindFirstChild("ChatChannelParentFrame"):FindFirstChild(
+    "Frame_MessageLogDisplay"):FindFirstChild("Scroller").ChildAdded:Connect(function(Child)
+    if Child:IsA("Frame") and Child.Name == "Frame" then
+        if not Child:FindFirstChild("TextLabel") then
+            return
+        end
+        if string.find(Child:FindFirstChild("TextLabel").Text, Player.DisplayName) then
+            local sellString = tostring(Child:FindFirstChild("TextLabel").Text)
+            local buyer = sellString:match("(%S+)%spurchased")
+            local pet = sellString:match("%sa%s([%p%w%s]+)%sfrom")
+            local seller = sellString:match("from%s([^%s]+)%sfor")
+            local price = sellString:match("for%s([^%s]+)%sDiamonds")
+            local currentDiamonds = string.format('%.2f', Library.Save.Get().Diamonds / 1000000000)
+            if seller == Player.DisplayName then
+                Webhook(shared.Settings.SellLink, {
+                    ["embeds"] = {{
+                        ["title"] = "Sold A " .. pet,
+                        ["description"] = "**Sold For:** " .. price .. " :diamonds:\n**To:** ||" .. buyer ..
+                            "||\n**Current Diamonds:** " .. currentDiamonds .. "b\n**Account:** ||" .. seller .. "||",
+                        ["type"] = "rich",
+                        ["color"] = tonumber(0x00ff00)
+                    }}
+                })
+                addPet()
+            elseif buyer == Player.DisplayName then
+                Webhook(shared.Settings.SnipeLink, {
+                    ["embeds"] = {{
+                        ["title"] = "Sniped A " .. pet,
+                        ["description"] = "**Sniped For:** " .. price .. " :diamonds:\n**From:** ||" .. seller ..
+                            "||\n**Current Diamonds:** " .. currentDiamonds .. "b\n**Account:** ||" .. buyer .. "||",
+                        ["type"] = "rich",
+                        ["color"] = tonumber(0x00ff00)
+                    }}
+                })
+            end
+        end
+    end
+end)
 
 local function CheckTypeOrRarity(Type, TypeTable, CheckTable)
     local Settings = TypeTable
@@ -256,7 +300,7 @@ local function snipePet()
     task.spawn(function()
         while true do
             for i, v in pairs(debug.getupvalues(
-                                  getsenv(Player.PlayerScripts.Scripts.Game["Trading Booths"]).SetupClaimed)[1]) do
+                                  getsenv(Scripts.Game["Trading Booths"]).SetupClaimed)[1]) do
                 task.spawn(function()
                     pcall(function()
                         if CalculateItemsInTable(v.Listings, 1) >= 1 and v.Owner ~= Player.UserId then
@@ -344,47 +388,3 @@ end
 
 sellPet()
 snipePet()
-
-Player.Idled:Connect(function()
-    VirtualUser:CaptureController()
-    VirtualUser:ClickButton2(Vector2.new())
-end)
-
-Player.PlayerGui:FindFirstChild("Chat"):FindFirstChild("Frame"):FindFirstChild("ChatChannelParentFrame"):FindFirstChild(
-    "Frame_MessageLogDisplay"):FindFirstChild("Scroller").ChildAdded:Connect(function(Child)
-    if Child:IsA("Frame") and Child.Name == "Frame" then
-        if not Child:FindFirstChild("TextLabel") then
-            return
-        end
-        if string.find(Child:FindFirstChild("TextLabel").Text, Player.DisplayName) then
-            local sellString = tostring(Child:FindFirstChild("TextLabel").Text)
-            local buyer = sellString:match("(%S+)%spurchased")
-            local pet = sellString:match("%sa%s([%p%w%s]+)%sfrom")
-            local seller = sellString:match("from%s([^%s]+)%sfor")
-            local price = sellString:match("for%s([^%s]+)%sDiamonds")
-            local currentDiamonds = string.format('%.2f', Library.Save.Get().Diamonds / 1000000000)
-            if seller == Player.DisplayName then
-                Webhook(shared.Settings.SellLink, {
-                    ["embeds"] = {{
-                        ["title"] = "Sold A " .. pet,
-                        ["description"] = "**Sold For:** " .. price .. " :diamonds:\n**To:** ||" .. buyer ..
-                            "||\n**Current Diamonds:** " .. currentDiamonds .. "b\n**Account:** ||" .. seller .. "||",
-                        ["type"] = "rich",
-                        ["color"] = tonumber(0x00ff00)
-                    }}
-                })
-                addPet()
-            elseif buyer == Player.DisplayName then
-                Webhook(shared.Settings.SnipeLink, {
-                    ["embeds"] = {{
-                        ["title"] = "Sniped A " .. pet,
-                        ["description"] = "**Sniped For:** " .. price .. " :diamonds:\n**From:** ||" .. seller ..
-                            "||\n**Current Diamonds:** " .. currentDiamonds .. "b\n**Account:** ||" .. buyer .. "||",
-                        ["type"] = "rich",
-                        ["color"] = tonumber(0x00ff00)
-                    }}
-                })
-            end
-        end
-    end
-end)
