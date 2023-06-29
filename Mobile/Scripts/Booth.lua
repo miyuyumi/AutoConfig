@@ -114,7 +114,9 @@ Player.PlayerGui:FindFirstChild("Chat"):FindFirstChild("Frame"):FindFirstChild("
                         ["color"] = tonumber(0x00ff00)
                     }}
                 })
-                addPet()
+                pcall(function()
+                    addPet()
+                end)
             elseif buyer == Player.DisplayName then
                 Webhook(shared.Settings.SnipeLink, {
                     ["embeds"] = {{
