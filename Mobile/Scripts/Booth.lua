@@ -390,5 +390,11 @@ while not getsenv(Scripts.Game["Trading Booths"]).GetBooth() do
     end
 end
 
-sellPet()
-snipePet()
+pcall(function()
+    sellPet()
+end)
+
+pcall(function()
+    snipePet()
+end)
+
