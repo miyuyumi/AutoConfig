@@ -120,28 +120,32 @@ Player.PlayerGui:FindFirstChild("Chat"):FindFirstChild("Frame"):FindFirstChild("
             local price = sellString:match("for%s([^%s]+)%sDiamonds")
             local currentDiamonds = string.format('%.2f', Library.Save.Get().Diamonds / 1000000000)
             if seller == Player.DisplayName then
-                Webhook(shared.Settings.SellLink, {
-                    ["embeds"] = {{
-                        ["title"] = "Sold A " .. pet,
-                        ["description"] = "**Sold For:** " .. price .. " :diamonds:\n**To:** ||" .. buyer ..
-                            "||\n**Current Diamonds:** " .. currentDiamonds .. "b\n**Account:** ||" .. seller .. "||",
-                        ["type"] = "rich",
-                        ["color"] = tonumber(0x00ff00)
-                    }}
-                })
+                if pet:find("Huge") then
+                    Webhook(shared.Settings.SellLink, {
+                        ["embeds"] = {{
+                            ["title"] = "Sold A " .. pet,
+                            ["description"] = "**Sold For:** " .. price .. " :diamonds:\n**To:** ||" .. buyer ..
+                                "||\n**Current Diamonds:** " .. currentDiamonds .. "b\n**Account:** ||" .. seller .. "||",
+                            ["type"] = "rich",
+                            ["color"] = tonumber(0x00ff00)
+                        }}
+                    })
+                end
                 pcall(function()
                     addPet()
                 end)
             elseif buyer == Player.DisplayName then
-                Webhook(shared.Settings.SnipeLink, {
-                    ["embeds"] = {{
-                        ["title"] = "Sniped A " .. pet,
-                        ["description"] = "**Sniped For:** " .. price .. " :diamonds:\n**From:** ||" .. seller ..
-                            "||\n**Current Diamonds:** " .. currentDiamonds .. "b\n**Account:** ||" .. buyer .. "||",
-                        ["type"] = "rich",
-                        ["color"] = tonumber(0x00ff00)
-                    }}
-                })
+                if pet:find("Huge") then
+                    Webhook(shared.Settings.SnipeLink, {
+                        ["embeds"] = {{
+                            ["title"] = "Sniped A " .. pet,
+                            ["description"] = "**Sniped For:** " .. price .. " :diamonds:\n**From:** ||" .. seller ..
+                                "||\n**Current Diamonds:** " .. currentDiamonds .. "b\n**Account:** ||" .. buyer .. "||",
+                            ["type"] = "rich",
+                            ["color"] = tonumber(0x00ff00)
+                        }}
+                    })
+                end
             end
         end
     end
