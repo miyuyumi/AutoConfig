@@ -66,6 +66,12 @@ local function Webhook(Url, Data)
     }
 end
 
+local function VirtualPressButton(Button)
+    game:GetService("VirtualInputManager"):SendKeyEvent(true, Button, false, nil)
+    task.wait()
+    game:GetService("VirtualInputManager"):SendKeyEvent(false, Button, false, nil)
+end
+
 local function addPet()
     inventoryList = {}
     for _, v in pairs(Library.Save.Get().Pets) do
@@ -394,6 +400,8 @@ while not getsenv(Scripts.Game["Trading Booths"]).GetBooth() do
         end
     end
 end
+
+VirtualPressButton("X")
 
 pcall(function()
     sellPet()
