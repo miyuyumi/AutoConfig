@@ -117,9 +117,12 @@ else
         end
 
         for _, v in pairs(Players:GetPlayers()) do
-            if v:IsInGroup(groupId) then
-                player:Kick(string.format("Staff [%s] is in the game.", v.Name))
-            end
+            pcall(function()
+                if v:IsInGroup(groupId) then
+                    player:Kick(string.format("Staff [%s] is in the game.", v.Name))
+                end
+            end)
+
         end
 
         Players.PlayerAdded:Connect(function(Player)
