@@ -328,7 +328,7 @@ local function snipePet()
                                     }
                                     if v3[1] ~= "" and Pet.id == v3[1] and Library.Save.Get().Diamonds >= v2.Price and
                                         v3[2] >= v2.Price and CheckTypeOrRarity("Type", Settings, Pet) then
-                                        Root:PivotTo(v.Model.Booth.CFrame * CFrame.new(0, -16, 0))
+                                        Root:PivotTo(v.Model.Booth.CFrame * CFrame.new(0, -13, 0))
                                         Purchased = attemptPurchase(tonumber(i), i2, v2.Price)
                                         if Purchased then
                                             addPet()
@@ -349,7 +349,7 @@ local function snipePet()
                                         if Library.Save.Get().Diamonds >= v2.Price and v3[2] >= v2.Price and
                                             CheckTypeOrRarity("Type", Settings, Pet) and
                                             CheckTypeOrRarity("Rarity", Settings, Pet) then
-                                            Root:PivotTo(v.Model.Booth.CFrame * CFrame.new(0, -16, 0))
+                                            Root:PivotTo(v.Model.Booth.CFrame * CFrame.new(0, -13, 0))
                                             Purchased = attemptPurchase(tonumber(i), i2, v2.Price)
                                             if Purchased then
                                                 addPet()
