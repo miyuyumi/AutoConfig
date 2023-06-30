@@ -41,6 +41,15 @@ local snipeList = HttpService:JSONDecode(readfile(getgenv().Config))
 local inventoryList = {}
 local addedList = {}
 
+for i, v in
+    pairs(game:GetService("Workspace")["__MAP"]:WaitForChild("Interactive"):WaitForChild("Booths"):GetChildren()) do
+    local Snipe = Instance.new("Part")
+    Snipe.Parent = game.Workspace
+    Snipe.Size = Vector3.new(5, 1, 5)
+    Snipe.Anchored = true
+    Snipe.CFrame = v.Booth.CFrame * CFrame.new(0, -16, 0)
+end
+
 Player.Idled:Connect(function()
     VirtualUser:CaptureController()
     VirtualUser:ClickButton2(Vector2.new())
@@ -228,9 +237,9 @@ end
 
 local function CheckForSnipePet(PetUid)
     local Found = false
-    for i2, v2 in pairs(game:GetService("Workspace")["__MAP"].Interactive.Booths:GetDescendants()) do
+    for i, v in pairs(game:GetService("Workspace")["__MAP"].Interactive.Booths:GetDescendants()) do
         task.spawn(function()
-            if v2.Name == PetUid then
+            if v.Name == PetUid then
                 Found = true
             end
         end)
@@ -279,8 +288,6 @@ local function sellPet()
     end
 end
 
-
-
 local function attemptPurchase(boothIndex, petUID, price)
     local Success = false
     repeat
@@ -303,8 +310,7 @@ local Purchased = false
 local function snipePet()
     task.spawn(function()
         while true do
-            for i, v in pairs(debug.getupvalues(
-                                  getsenv(Scripts.Game["Trading Booths"]).SetupClaimed)[1]) do
+            for i, v in pairs(debug.getupvalues(getsenv(Scripts.Game["Trading Booths"]).SetupClaimed)[1]) do
                 task.spawn(function()
                     pcall(function()
                         if CalculateItemsInTable(v.Listings, 1) >= 1 and v.Owner ~= Player.UserId then
@@ -322,12 +328,11 @@ local function snipePet()
                                     }
                                     if v3[1] ~= "" and Pet.id == v3[1] and Library.Save.Get().Diamonds >= v2.Price and
                                         v3[2] >= v2.Price and CheckTypeOrRarity("Type", Settings, Pet) then
-                                        Root:PivotTo(v.Model.Booth.CFrame)
+                                        Root:PivotTo(v.Model.Booth.CFrame * CFrame.new(0, -16, 0))
                                         Purchased = attemptPurchase(tonumber(i), i2, v2.Price)
                                         if Purchased then
                                             addPet()
-                                            Root:PivotTo(playerPos)
-                                        end  
+                                        end
                                     elseif v3[4] ~= "" then
                                         Settings["Rarities"] = {
                                             ["Basic"] = (SettingsChecker(v3[4], "Basic") and true) or false,
@@ -344,12 +349,12 @@ local function snipePet()
                                         if Library.Save.Get().Diamonds >= v2.Price and v3[2] >= v2.Price and
                                             CheckTypeOrRarity("Type", Settings, Pet) and
                                             CheckTypeOrRarity("Rarity", Settings, Pet) then
-                                            Root:PivotTo(v.Model.Booth.CFrame)
+                                            Root:PivotTo(v.Model.Booth.CFrame * CFrame.new(0, -16, 0))
                                             Purchased = attemptPurchase(tonumber(i), i2, v2.Price)
                                             if Purchased then
                                                 addPet()
-                                                Root:PivotTo(playerPos)
-                                            end                                        end
+                                            end
+                                        end
                                     end
                                     if Purchased then
                                         break
