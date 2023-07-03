@@ -61,23 +61,23 @@ end
 
 setRAM = coroutine.wrap(function()
     while true do
-        allDiamonds = lib.Save.Get().Diamonds
-        mailDiamonds = allDiamonds - 15000100000
-        if condition == 1 then
-            if config == 'AM' then
-                if #num > 34 then
-                    config = 'PM'
-                    local getResponse = makeGetRequest(apiUrl)
-                    game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
-                        game.Players.LocalPlayer)
-                end
-            else
-                if #num < 6 then
-                    config = 'AM'
-                    local getResponse = makeGetRequest(apiUrl)
-                    game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
-                        game.Players.LocalPlayer)
-                end
+        local allDiamonds = lib.Save.Get().Diamonds
+        local mailDiamonds = allDiamonds - 15000100000
+        if config == 'AM' then
+            if #num > 40 then
+                config = 'PM'
+                -- local getResponse = makeGetRequest(apiUrl)
+                -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
+                --     game.Players.LocalPlayer)
+                game:Shutdown()
+            end
+        else
+            if #num < 6 then
+                config = 'AM'
+                -- local getResponse = makeGetRequest(apiUrl)
+                -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
+                --     game.Players.LocalPlayer)
+                game:Shutdown()
             end
         end
 
@@ -117,7 +117,7 @@ local purge = tostring(game:HttpGetAsync(
     "https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Configurations/Purging.json"))
 writefile("Purge.json", purge)
 
-if #num <= 10 then
+if #num <= 20 then
     config = 'AM'
     setRAM()
     getgenv().Config = 'Snipe.json'
