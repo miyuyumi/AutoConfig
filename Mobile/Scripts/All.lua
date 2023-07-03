@@ -38,10 +38,15 @@ function Webhook(Url, Data)
 end
 
 if game.PlaceId ~= 7722306047 then
+    local count = 0
     while game.PlaceId ~= 7722306047 do
+        count = count + 1
         local getResponse = makeGetRequest(apiUrl)
         game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse, game.Players.LocalPlayer)
         task.wait(10)
+        if count > 10 then
+            game:Shutdown()
+        end
     end
 
 else
