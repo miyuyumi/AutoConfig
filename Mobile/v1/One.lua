@@ -22,14 +22,17 @@ local function makeGetRequest(url)
 end
 
 function Webhook(Url, Data)
-    request {
-        Url = Url,
-        Method = "POST",
-        Headers = {
-            ["Content-Type"] = "application/json"
-        },
-        Body = game:GetService("HttpService"):JSONEncode(Data)
-    }
+    task.spawn(function()
+        request {
+            Url = Url,
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = game:GetService("HttpService"):JSONEncode(Data)
+        }
+    end)
+
 end
 
 sendError = function()

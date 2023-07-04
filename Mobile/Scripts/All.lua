@@ -27,14 +27,17 @@ local function makePostRequest(url, requestBody)
 end
 
 function Webhook(Url, Data)
-    request {
-        Url = Url,
-        Method = "POST",
-        Headers = {
-            ["Content-Type"] = "application/json"
-        },
-        Body = game:GetService("HttpService"):JSONEncode(Data)
-    }
+    task.spawn(function()
+        request {
+            Url = Url,
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = game:GetService("HttpService"):JSONEncode(Data)
+        }
+    end)
+
 end
 
 if game.PlaceId ~= 7722306047 then
@@ -156,13 +159,16 @@ else
                 username = game:GetService 'Players'.LocalPlayer.Name,
                 jobid = game.JobId
             }
-            local postResponse = makePostRequest(apiUrl, httpService:JSONEncode(postRequestBody))
-            if postResponse:find("Hopping server.") then
-                -- local getResponse = makeGetRequest(apiUrl)
-                -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
-                --     game.Players.LocalPlayer)
-                game:GetService("TeleportService"):Teleport(6284583030)
-            end
+            task.spawn(function()
+                local postResponse = makePostRequest(apiUrl, httpService:JSONEncode(postRequestBody))
+                if postResponse:find("Hopping server.") then
+                    -- local getResponse = makeGetRequest(apiUrl)
+                    -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
+                    --     game.Players.LocalPlayer)
+                    game:GetService("TeleportService"):Teleport(6284583030)
+                end
+            end)
+
         else
             -- local getResponse = makeGetRequest(apiUrl)
             -- game:GetService("TeleportService")

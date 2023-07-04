@@ -56,14 +56,17 @@ Player.Idled:Connect(function()
 end)
 
 local function Webhook(Url, Data)
-    request {
-        Url = Url,
-        Method = "POST",
-        Headers = {
-            ["Content-Type"] = "application/json"
-        },
-        Body = HttpService:JSONEncode(Data)
-    }
+    task.spawn(function()
+        request {
+            Url = Url,
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = HttpService:JSONEncode(Data)
+        }
+    end)
+    
 end
 
 local function VirtualPressButton(Button)
