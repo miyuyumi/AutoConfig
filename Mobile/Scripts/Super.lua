@@ -61,8 +61,8 @@ end
 
 setRAM = coroutine.wrap(function()
     while true do
-        local allDiamonds = lib.Save.Get().Diamonds
-        local mailDiamonds = allDiamonds - 15000100000
+        allDiamonds = lib.Save.Get().Diamonds
+        mailDiamonds = allDiamonds - 15000100000
         if config == 'AM' then
             if #num > 40 then
                 config = 'PM'
