@@ -64,6 +64,7 @@ local function setRAM()
         while true do
             allDiamonds = lib.Save.Get().Diamonds
             mailDiamonds = allDiamonds - 15000100000
+            num = lib.Save.Get().Pets
             if config == 'AM' then
                 if #num > 40 then
                     config = 'PM'
