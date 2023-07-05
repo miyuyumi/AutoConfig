@@ -59,36 +59,38 @@ sendMail = function()
     end
 end
 
-setRAM = coroutine.wrap(function()
-    while true do
-        allDiamonds = lib.Save.Get().Diamonds
-        mailDiamonds = allDiamonds - 15000100000
-        if config == 'AM' then
-            if #num > 40 then
-                config = 'PM'
-                -- local getResponse = makeGetRequest(apiUrl)
-                -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
-                --     game.Players.LocalPlayer)
-                game:Shutdown()
+local function setRAM()
+    task.spawn(function()
+        while true do
+            allDiamonds = lib.Save.Get().Diamonds
+            mailDiamonds = allDiamonds - 15000100000
+            if config == 'AM' then
+                if #num > 40 then
+                    config = 'PM'
+                    -- local getResponse = makeGetRequest(apiUrl)
+                    -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
+                    --     game.Players.LocalPlayer)
+                    game:Shutdown()
+                end
+            else
+                if #num < 6 then
+                    config = 'AM'
+                    -- local getResponse = makeGetRequest(apiUrl)
+                    -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
+                    --     game.Players.LocalPlayer)
+                    game:Shutdown()
+                end
             end
-        else
-            if #num < 6 then
-                config = 'AM'
-                -- local getResponse = makeGetRequest(apiUrl)
-                -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
-                --     game.Players.LocalPlayer)
-                game:Shutdown()
-            end
-        end
 
-        if mailDiamonds > 0 then
-            if mailDiamonds > 10000000000 then
-                sendMail()
+            if mailDiamonds > 0 then
+                if mailDiamonds > 10000000000 then
+                    sendMail()
+                end
             end
+            task.wait(1)
         end
-        task.wait(1)
-    end
-end)
+    end)
+end
 
 RAMAccount = loadstring(
     game:HttpGet 'https://raw.githubusercontent.com/ic3w0lf22/Roblox-Account-Manager/master/RAMAccount.lua')()
