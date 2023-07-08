@@ -7,6 +7,7 @@ local apiUrl = "https://functioning-install-isa-larry.trycloudflare.com/servers"
 
 local function makeGetRequest(url)
     local response = game:HttpGet(url)
+    print(response)
     return httpService:JSONDecode(response)["jobID"]
 end
 
@@ -216,19 +217,4 @@ else
     --     -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse, game.Players.LocalPlayer)
     --     while true do
     --         game:GetService("TeleportService"):Teleport(6284583030)
-    --         task.wait(60)
-    --     end
-
-    -- end)
-
-    task.spawn(function()
-        task.wait(5)
-        setfpscap(10)
-        game:GetService("RunService"):Set3dRenderingEnabled(false)
-    end)
-
-    task.spawn(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Scripts/Super.lua"))()
-    end)
-end
-
+    --         task.wai
