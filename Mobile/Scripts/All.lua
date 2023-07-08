@@ -9,7 +9,6 @@ local function makeGetRequest(url)
     local response
     repeat
         response = game:HttpGetAsync(url)
-        print(response)
     until response ~= ""
     return httpService:JSONDecode(response)["jobID"]
 end
