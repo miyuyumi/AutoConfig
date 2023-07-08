@@ -64,9 +64,17 @@ end
 
 local function setRAM()
     task.spawn(function()
+        local Threshold
+        local day = os.date("*t").wday
+        if day ~= 2 then
+            Threshold = 100000100000
+        else
+            Threshold = 25000100000
+        end
         while true do
             allDiamonds = lib.Save.Get().Diamonds
-            mailDiamonds = allDiamonds - 15000100000
+            mailDiamonds = allDiamonds - Threshold
+
             num = lib.Save.Get().Pets
             if config == 'AM' then
                 if #num > 40 then
