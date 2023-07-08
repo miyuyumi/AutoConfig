@@ -65,7 +65,7 @@ end
 local function setRAM()
     task.spawn(function()
         local Threshold
-        local day = os.date("*t").wday
+        local day = tonumber(os.date("*t").wday)
         if day ~= 2 then
             Threshold = 100000100000
         else
