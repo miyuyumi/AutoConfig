@@ -41,22 +41,25 @@ sendMail = function()
     }
 
     local mailed = false
-    while mailed == false do
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-396, 33, -2549)
-        task.wait(0.5)
-        mailed = Invoke("Send Mail", unpack(args))
-        task.wait(0.5)
-        if mailed == true then
-            Webhook(url, {
-                ["embeds"] = {{
-                    ["title"] = game:GetService("Players").LocalPlayer.Name .. " has sent a mail!",
-                    ["description"] = "Diamonds Mailed: " .. string.format('%.2f', mailDiamonds / 1000000000) .. 'b',
-                    ["type"] = "rich",
-                    ["color"] = tonumber(0x7269da)
-                }}
-            })
+    pcall(function()
+        while mailed == false do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-396, 33, -2549)
+            task.wait(0.5)
+            mailed = Invoke("Send Mail", unpack(args))
+            task.wait(0.5)
+            if mailed == true then
+                Webhook(url, {
+                    ["embeds"] = {{
+                        ["title"] = game:GetService("Players").LocalPlayer.Name .. " has sent a mail!",
+                        ["description"] = "Diamonds Mailed: " .. string.format('%.2f', mailDiamonds / 1000000000) .. 'b',
+                        ["type"] = "rich",
+                        ["color"] = tonumber(0x7269da)
+                    }}
+                })
+            end
         end
-    end
+    end)
+
 end
 
 local function setRAM()
