@@ -6,11 +6,8 @@ local groupId = 5060810
 local apiUrl = "https://functioning-install-isa-larry.trycloudflare.com/servers"
 
 local function makeGetRequest(url)
-    pcall(function()
-        local response = game:HttpGetAsync(url)
-        local ID = httpService:JSONDecode(response)["jobID"]
-        return ID
-    end)
+    local response = game:HttpGet(url)
+    return httpService:JSONDecode(response)["jobID"]
 end
 
 local function makePostRequest(url, requestBody)
