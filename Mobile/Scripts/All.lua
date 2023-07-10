@@ -150,12 +150,19 @@ else
         promptOverlay.ChildAdded:connect(function(V)
             if V.Name == 'ErrorPrompt' then
                 repeat
-                    if promptOverlay.ErrorPrompt.MessageArea.ErrorFrame.ErrorMessage.Text ~= "Label" then
-                        sendError()
-                        -- local getResponse = makeGetRequest(apiUrl)
-                        -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
-                        --     game.Players.LocalPlayer)
-                        game:GetService("TeleportService"):Teleport(6284583030)
+                    Overlay = promptOverlay.ErrorPrompt.MessageArea.ErrorFrame.ErrorMessage.Text
+                    if Overlay ~= "Label" then
+                        if Overlay:find("[SAVING]") then
+                            sendError()
+                            task.wait(300)
+                            game:Shutdown()
+                        else
+                            sendError()
+                            game:GetService("TeleportService"):Teleport(6284583030)
+                            -- local getResponse = makeGetRequest(apiUrl)
+                            -- game:GetService("TeleportService"):TeleportToPlaceInstance(7722306047, getResponse,
+                            --     game.Players.LocalPlayer)
+                        end
                     end
                     task.wait(5)
                 until false
