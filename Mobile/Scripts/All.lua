@@ -232,12 +232,6 @@ else
     -- end)
 
     task.spawn(function()
-        task.wait(5)
-        setfpscap(10)
-        game:GetService("RunService"):Set3dRenderingEnabled(false)
-    end)
-
-    task.spawn(function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/miyuyumi/AutoConfig/main/Mobile/Scripts/Super.lua"))()
     end)
 end

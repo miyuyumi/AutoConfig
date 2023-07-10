@@ -2,6 +2,12 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
+task.spawn(function()
+    -- task.wait(5)
+    setfpscap(10)
+    game:GetService("RunService"):Set3dRenderingEnabled(false)
+end)
+
 getgenv().DebugHook =
     "https://discord.com/api/webhooks/1100659121256157184/b026lTPa9QyEyB_BNayvzWfgBLWNj4qdaVb9VIAZU9bFwQ49aO-_0WaxarpLHsWiCO0X"
 getgenv().MailHook =
