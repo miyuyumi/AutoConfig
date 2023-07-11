@@ -112,8 +112,6 @@ if game.PlaceId ~= 7722306047 then
     end
 
 else
-    task.wait(20)
-
     task.spawn(function()
         repeat
             task.wait()
